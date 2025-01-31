@@ -1,0 +1,16 @@
+[
+    {
+        "url": "xxx",
+        "actions": [
+            {
+                "name": "xxx",
+                "start_time": "xxx",
+                "end_time": "xxx",
+                "count": [], //计数label，对于个数不明确的动作可能有多个ground true
+                "fuzzy_action": true, //是否是不明确个数的动作
+                "complex_action": false //是否需要额外详细描述“一个动作”的标准
+            },
+            {}
+        ]
+    }
+]
