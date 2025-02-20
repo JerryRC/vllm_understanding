@@ -2,73 +2,59 @@ import os
 import time
 import google.generativeai as genai
 
+# 配置 API 密钥
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 def upload_to_gemini(path, mime_type=None):
-  """Uploads the given file to Gemini.
+    """
+    上传指定文件到 Gemini，并返回上传后的文件对象。
+    """
+    file = genai.upload_file(path, mime_type=mime_type)
+    print(f"Uploaded file '{file.display_name}' as: {file.uri}")
+    return file
 
-  See https://ai.google.dev/gemini-api/docs/prompting_with_media
-  """
-  file = genai.upload_file(path, mime_type=mime_type)
-  print(f"Uploaded file '{file.display_name}' as: {file.uri}")
-  return file
+def wait_for_file_active(file):
+    """
+    等待上传的文件处理完成，直到状态变为 ACTIVE（失败则抛出异常）。
+    """
+    print("Waiting for file processing...", end="")
+    while True:
+        current_file = genai.get_file(file.name)
+        if current_file.state.name == "ACTIVE":
+            print(" done.")
+            return current_file
+        elif current_file.state.name == "FAILED":
+            raise Exception(f"File {file.name} failed to process")
+        else:
+            print(".", end="", flush=True)
+            time.sleep(10)
 
-def wait_for_files_active(files):
-  """Waits for the given files to be active.
+# 上传视频文件，确保使用正确的 MIME 类型（视频文件一般使用 "video/mp4"）
+video_path = "/home/cjr/WorkSpace/VLLM-action-count/downloads/54cd3d4802f41a8f9195d165159f07cc/clips/0839_side stretch(R)_[7].mp4"
+uploaded_video = upload_to_gemini(video_path, mime_type="video/mp4")
+uploaded_video = wait_for_file_active(uploaded_video)
 
-  Some files uploaded to the Gemini API need to be processed before they can be
-  used as prompt inputs. The status can be seen by querying the file's "state"
-  field.
-
-  This implementation uses a simple blocking polling loop. Production code
-  should probably employ a more sophisticated approach.
-  """
-  print("Waiting for file processing...")
-  for name in (file.name for file in files):
-    file = genai.get_file(name)
-    while file.state.name == "PROCESSING":
-      print(".", end="", flush=True)
-      time.sleep(10)
-      file = genai.get_file(name)
-    if file.state.name != "ACTIVE":
-      raise Exception(f"File {file.name} failed to process")
-  print("...all files ready")
-  print()
-
-# Create the model
-generation_config = {
-  "temperature": 0,
-  "top_p": 0.95,
-  "top_k": 40,
-  "max_output_tokens": 8192,
-  "response_mime_type": "text/plain",
-}
-
+# 创建 Gemini 模型实例
 model = genai.GenerativeModel(
-  model_name="gemini-2.0-flash-exp",
-  generation_config=generation_config,
+    model_name="gemini-2.0-flash-exp",
+    generation_config={
+        "temperature": 0,
+        "top_p": 0.95,
+        "top_k": 40,
+        "max_output_tokens": 8192,
+        "response_mime_type": "text/plain",
+    },
 )
 
-# TODO Make these files available on the local file system
-# You may need to update the file paths
-files = [
-  upload_to_gemini("/home/cjr/WorkSpace/VLLM-action-count/downloads/7a184635bb8578128a14c25954e0a873/clips/0012_leg activation(R)_[9].mp4", mime_type="video/webm"),
+# 启动聊天会话（不需要预先将视频放入历史中）
+chat_session = model.start_chat()
+
+# 将文本提示和视频文件一起传入当前消息（注意：将文本与媒体文件组合成一个列表）
+prompt_message = [
+    uploaded_video,
+    "This is a video of a video blogger performing the Wall Bridge movement. Please count how many Wall Bridge movements the blogger has completed in total. Note that the blogger's movement frequency may not remain constant, so please count each movement carefully one by one. Analyze the video frame by frame and provide the reasoning behind your answer."    
 ]
 
-# Some files have a processing delay. Wait for them to be ready.
-wait_for_files_active(files)
-
-chat_session = model.start_chat(
-  history=[
-    {
-      "role": "user",
-      "parts": [
-        files[0],
-      ],
-    },
-  ]
-)
-
-response = chat_session.send_message("This is a video about leg activation training. Please count the total number of movements performed by the creator in the video.")
-
-print(response.text)
+# 发送消息并获得回答
+response = chat_session.send_message(prompt_message)
+print("\nGenerated Response:\n", response.text)
