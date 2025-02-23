@@ -50,9 +50,10 @@ model = genai.GenerativeModel(
 chat_session = model.start_chat()
 
 # 将文本提示和视频文件一起传入当前消息（注意：将文本与媒体文件组合成一个列表）
+movement = "side stretch"
 prompt_message = [
     uploaded_video,
-    "This is a video of a video blogger performing the Wall Bridge movement. Please count how many Wall Bridge movements the blogger has completed in total. Note that the blogger's movement frequency may not remain constant, so please count each movement carefully one by one. Analyze the video frame by frame and provide the reasoning behind your answer."    
+    f"This is a video of a video blogger performing the {movement} movement. Please count how many {movement} movements the blogger has completed in total. Note that the blogger's movement frequency may not remain constant, so please count each movement carefully one by one. Analyze the video frame by frame and provide the reasoning behind your answer."    
 ]
 
 # 发送消息并获得回答
