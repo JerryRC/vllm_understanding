@@ -1,3 +1,5 @@
+# 评分脚本，用于计算生成的动作计数与ground truth的差异
+# demo 版本，目前比较依赖规则提取
 import json
 import re
 import numpy as np

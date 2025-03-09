@@ -159,17 +159,17 @@ def second_slow(download_dir):
 
 def third_extract(download_dir):
     """
-    遍历 `slow/` 目录中的视频，按每秒 `n` 帧均匀抽取，并保存到 `frames/` 目录。
+    遍历 `clips/` 目录中的视频，按每秒 `n` 帧均匀抽取，并保存到 `frames/` 目录。
     """
     for v_id in os.listdir(download_dir):
         video_dir = os.path.join(download_dir, v_id)
-        slow_dir = os.path.join(video_dir, "clips")
+        clips_dir = os.path.join(video_dir, "clips")
         frames_dir = os.path.join(video_dir, "frames")
         os.makedirs(frames_dir, exist_ok=True)
 
-        for file in os.listdir(slow_dir):
+        for file in os.listdir(clips_dir):
             if file.endswith(".mp4"):
-                input_path = os.path.join(slow_dir, file)
+                input_path = os.path.join(clips_dir, file)
                 extract_frames(input_path, frames_dir, fps=4)
 
     print("所有视频的帧提取完成！")

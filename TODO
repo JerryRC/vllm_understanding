@@ -1,0 +1,9 @@
+各api调用计划：
+采用传输视频帧的方案，所有视频帧在py代码中encode为base64而不要用路径访问的方式。
+open router：
+    - openai
+    - claude
+    - qwen vl
+
+google 官方：
+    - gemini pro
