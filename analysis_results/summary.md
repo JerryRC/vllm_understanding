@@ -9,6 +9,7 @@ This report summarizes the Mean Absolute Error (MAE), Root Mean Squared Error (R
 | gemini-2.0-flash                | 11.49 | 15.65 |      0.5143 |       288 |
 | gemini-2.5-flash-preview-04-17  |  6.70 | 11.86 |      0.6927 |       260 |
 | gemini-2.5-pro-preview-03-25    |  5.73 |  9.67 |      0.8243 |       282 |
+| qwen2.5-vl-32b-instruct         |  9.37 | 15.00 |      0.4970 |       283 |
 
 ## Trends Observed
 
