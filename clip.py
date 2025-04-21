@@ -178,8 +178,8 @@ def third_extract(download_dir):
 def main():
     # 下载目录
     download_dir = "downloads"
-    # first_cut(download_dir)
-    # second_slow(download_dir)
+    first_cut(download_dir)
+    second_slow(download_dir)
     third_extract(download_dir)
 
 
