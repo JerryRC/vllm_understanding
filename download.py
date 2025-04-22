@@ -33,6 +33,9 @@ def download_videos(json_data, download_dir="downloads"):
             'outtmpl': video_path,  # 视频保存路径
             'cookiefile': "~/tmp-cookies",  # 使用cookies文件
         }
+        if os.path.exists(video_path):
+            print(f"Skipping {url} because it already exists")
+            continue
         try:
             with YoutubeDL(ydl_opts) as ydl:
                 ydl.download([url])
