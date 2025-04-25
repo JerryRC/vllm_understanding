@@ -10,7 +10,8 @@ def parse_excel_to_json(file_path):
     result = []
 
     # 遍历每一列，每四列代表一个视频
-    for i in range(1, len(df.columns), 4):
+    # for i in range(1, len(df.columns), 4):
+    for i in range(1, len(df.columns), 2):
         # 提取视频URL
         url = df.iloc[1, i]
         if pd.isna(url):
@@ -53,8 +54,8 @@ def parse_excel_to_json(file_path):
 
             # 检查复杂动作标记
             complex_action = False
-            if isinstance(df.iloc[j, i+1], str) and any('\u4e00' <= char <= '\u9fff' for char in df.iloc[j, i+1]):
-                complex_action = True
+            # if isinstance(df.iloc[j, i+2], str) and any('\u4e00' <= char <= '\u9fff' for char in df.iloc[j, i+2]):
+            #     complex_action = True
 
             # 添加到动作列表
             actions.append({
@@ -77,7 +78,8 @@ def parse_excel_to_json(file_path):
     return json.dumps(result, indent=4)
 
 # 使用示例
-file_path = 'Ground True.xlsx'
+# file_path = 'Ground True.xlsx'
+file_path = 'Ground True 1.xlsx'
 json_output = parse_excel_to_json(file_path)
 print(json_output)
 with open('video_list.json', 'w', encoding='utf-8') as f:

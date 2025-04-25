@@ -17,16 +17,32 @@ MODELS = {
 
 def extract_movement_info(filename):
     # Extract movement name and side (if any)
-    movement_match = re.search(r'_(.*?)(?:\((L|R)\))?_', filename)
+    movement_match = re.search(r'_(.*?)(?:\((L|R|l|r)\))_', filename)
     if movement_match:
         movement = movement_match.group(1)
         side = movement_match.group(2)
-        if side == 'L':
+        if side and side.upper() == 'L':
             movement = f'left {movement}'
-        elif side == 'R':
+        elif side and side.upper() == 'R':
             movement = f'right {movement}'
     else:
         movement = None
+        
+    # 检查中括号模式 [L|R]
+    bracket_match = re.search(r'_(.*?)\[(L|R|l|r)\]_', filename)
+    if not movement and bracket_match:
+        movement = bracket_match.group(1)
+        side = bracket_match.group(2)
+        if side and side.upper() == 'L':
+            movement = f'left {movement}'
+        elif side and side.upper() == 'R':
+            movement = f'right {movement}'
+    
+    # 如果两种模式都没匹配到，再尝试匹配没有方向的动作名称
+    if not movement:
+        basic_match = re.search(r'_(.*?)_', filename)
+        if basic_match:
+            movement = basic_match.group(1)
 
     # Extract ground truth numbers
     ground_truth_match = re.search(r'\[(\d+(-\d+)*)\]', filename)

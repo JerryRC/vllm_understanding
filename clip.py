@@ -132,9 +132,21 @@ def process_video(video_dir, metadata_path):
         except Exception as e:
             print(f"Failed to cut {name}: {e}")
 
-def first_cut(download_dir):
+# 读取要处理的文件夹列表
+def read_folder_list(list_file):
+    folder_list = []
+    if os.path.exists(list_file):
+        with open(list_file, 'r') as f:
+            folder_list = [line.strip() for line in f if line.strip()]
+    return folder_list
+
+def first_cut(download_dir, folder_list=None):
     # 遍历每个视频文件夹, 根据metadata.json进行裁剪
     for v_id in os.listdir(download_dir):
+        # 如果指定了文件夹列表，则只处理列表中的文件夹
+        if folder_list and v_id not in folder_list:
+            continue
+            
         video_dir = os.path.join(download_dir, v_id)
         metadata_path = os.path.join(video_dir, "metadata.json")
 
@@ -144,9 +156,13 @@ def first_cut(download_dir):
         else:
             print(f"No metadata found for video: {v_id}")
 
-def second_slow(download_dir):
+def second_slow(download_dir, folder_list=None):
     # 遍历所有文件夹的clips文件夹，将其下文件逐个慢放，保存到与clip同级的slow文件夹
     for v_id in os.listdir(download_dir):
+        # 如果指定了文件夹列表，则只处理列表中的文件夹
+        if folder_list and v_id not in folder_list:
+            continue
+            
         video_dir = os.path.join(download_dir, v_id)
         clips_dir = os.path.join(video_dir, "clips")
         slow_dir = os.path.join(video_dir, "slow")
@@ -157,11 +173,15 @@ def second_slow(download_dir):
             slow_down_video(input_path, output_path, 3)
             print(f"Slow down {file} to {output_path}")
 
-def third_extract(download_dir):
+def third_extract(download_dir, folder_list=None):
     """
     遍历 `clips/` 目录中的视频，按每秒 `n` 帧均匀抽取，并保存到 `frames/` 目录。
     """
     for v_id in os.listdir(download_dir):
+        # 如果指定了文件夹列表，则只处理列表中的文件夹
+        if folder_list and v_id not in folder_list:
+            continue
+            
         video_dir = os.path.join(download_dir, v_id)
         clips_dir = os.path.join(video_dir, "clips")
         frames_dir = os.path.join(video_dir, "frames")
@@ -178,9 +198,19 @@ def third_extract(download_dir):
 def main():
     # 下载目录
     download_dir = "downloads"
-    first_cut(download_dir)
-    second_slow(download_dir)
-    third_extract(download_dir)
+    
+    # 读取要处理的文件夹列表
+    force_download_file = "force_download.txt"
+    folder_list = read_folder_list(force_download_file)
+    
+    if folder_list:
+        print(f"将只处理以下{len(folder_list)}个文件夹: {', '.join(folder_list)}")
+    else:
+        print("未指定处理文件列表，将处理所有文件夹")
+    
+    first_cut(download_dir, folder_list)
+    second_slow(download_dir, folder_list)
+    third_extract(download_dir, folder_list)
 
 
 if __name__ == "__main__":

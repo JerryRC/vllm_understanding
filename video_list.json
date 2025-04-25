@@ -1,292 +1,25 @@
 [
     {
-        "v_id": "9e33fa88a9868ca518dbd0155940ebdd",
-        "v_name": "watch?v=1f8yoFFdkcY",
-        "url": "https://www.youtube.com/watch?v=1f8yoFFdkcY",
+        "v_id": "0e88251c3c85ae12ae8a0bb9f41b0a28",
+        "v_name": "watch?v=UOuVsZi47Bc",
+        "url": "https://www.youtube.com/watch?v=UOuVsZi47Bc",
         "actions": [
             {
-                "name": "crunch middle",
-                "start_time": "00:16:00",
-                "end_time": "00:46:00",
+                "name": "straight leg lift [r]",
+                "start_time": "00:18:00",
+                "end_time": "00:58:00",
                 "count": [
-                    15
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "crunch left",
-                "start_time": "00:56:00",
-                "end_time": "01:26:00",
-                "count": [
-                    18
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "crunch right",
-                "start_time": "01:36:00",
-                "end_time": "02:06:00",
-                "count": [
-                    19
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "heel touches",
-                "start_time": "02:16:00",
-                "end_time": "02:46:00",
-                "count": [
-                    27,
-                    26,
-                    28
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "AB HOLD",
-                "start_time": "02:55:00",
-                "end_time": "03:27:00",
-                "count": [
-                    1
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": " Russian Twist",
-                "start_time": "03:36:00",
-                "end_time": "04:06:00",
-                "count": [
-                    29,
-                    28,
-                    30
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "slow mountain climber",
-                "start_time": "04:56:00",
-                "end_time": "05:26:00",
-                "count": [
-                    15
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "Toe touches",
-                "start_time": "06:16:00",
-                "end_time": "06:46:00",
-                "count": [
+                    13,
+                    12,
                     14
                 ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "Bicycle crunch",
-                "start_time": "06:56:00",
-                "end_time": "07:26:00",
-                "count": [
-                    28
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "Hip Lift",
-                "start_time": "07:36:00",
-                "end_time": "08:06:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "spider plank",
-                "start_time": "08:56:00",
-                "end_time": "09:26:00",
-                "count": [
-                    16
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "plank",
-                "start_time": "09:34:00",
-                "end_time": "10:09:00",
-                "count": [
-                    1
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "5e3a8d788affec0d65e36b94c8fc6791",
-        "v_name": "watch?v=zr08J6wB53Y",
-        "url": "https://www.youtube.com/watch?v=zr08J6wB53Y",
-        "actions": [
-            {
-                "name": "jumping jack",
-                "start_time": "00:15:00",
-                "end_time": "00:45:00",
-                "count": [
-                    35
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "high knees",
-                "start_time": "00:45:00",
-                "end_time": "01:15:00",
-                "count": [
-                    80,
-                    79,
-                    81
-                ],
                 "fuzzy_action": true,
                 "complex_action": false
             },
             {
-                "name": "squat + side jumpy",
-                "start_time": "01:15:00",
-                "end_time": "01:45:00",
-                "count": [
-                    21
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "mountain climber",
-                "start_time": "01:45:00",
-                "end_time": "02:15:00",
-                "count": [
-                    69,
-                    68,
-                    70
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "plank + jumping jack",
-                "start_time": "02:45:00",
-                "end_time": "03:15:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "jump + punches",
-                "start_time": "03:15:00",
-                "end_time": "03:45:00",
-                "count": [
-                    16
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "high knees",
-                "start_time": "03:45:00",
-                "end_time": "04:15:00",
-                "count": [
-                    82
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "squat jump + 3s hold",
-                "start_time": "04:15:00",
-                "end_time": "04:45:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "twisting mountain climber",
-                "start_time": "04:45:00",
-                "end_time": "05:15:00",
-                "count": [
-                    59,
-                    58,
-                    60
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "push up (on knees)",
-                "start_time": "05:15:00",
-                "end_time": "05:45:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "plank jump + 3 punches",
-                "start_time": "06:15:00",
-                "end_time": "06:45:00",
-                "count": [
-                    9
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "HIGH KNEES",
-                "start_time": "06:45:00",
-                "end_time": "07:14:00",
-                "count": [
-                    79,
-                    78,
-                    80
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "SQUAT + SIDE JUMPY",
-                "start_time": "07:14:00",
-                "end_time": "07:45:00",
-                "count": [
-                    21
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "JUMPING JACK",
-                "start_time": "07:45:00",
-                "end_time": "08:16:00",
-                "count": [
-                    35
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "PLANK + JUMPING JACK",
-                "start_time": "08:16:00",
-                "end_time": "08:47:00",
+                "name": "straight leg circle [r]",
+                "start_time": "01:40:00",
+                "end_time": "02:20:00",
                 "count": [
                     11
                 ],
@@ -294,56 +27,9 @@
                 "complex_action": false
             },
             {
-                "name": "MOUNTAIN CLIMBER",
-                "start_time": "08:46:00",
-                "end_time": "09:16:00",
-                "count": [
-                    62
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "HIGH PLANK",
-                "start_time": "09:16:00",
-                "end_time": "09:46:00",
-                "count": [
-                    1
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "ELBOW PLANK",
-                "start_time": "09:45:00",
-                "end_time": "10:16:00",
-                "count": [
-                    1
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "199aec58ef058b0a17cd460ca5f138c9",
-        "v_name": "watch?v=2pLT-olgUJs",
-        "url": "https://www.youtube.com/watch?v=2pLT-olgUJs",
-        "actions": [
-            {
-                "name": "leg raise clap",
-                "start_time": "00:54:00",
-                "end_time": "01:23:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "reverse crunch",
-                "start_time": "01:23:00",
-                "end_time": "01:53:00",
+                "name": "lower leg lift (L)",
+                "start_time": "02:30:00",
+                "end_time": "03:10:00",
                 "count": [
                     12
                 ],
@@ -351,41 +37,29 @@
                 "complex_action": false
             },
             {
-                "name": "spider-man plank",
-                "start_time": "02:03:00",
-                "end_time": "02:33:00",
+                "name": "straight leg lift (L)",
+                "start_time": "04:00:00",
+                "end_time": "04:40:00",
                 "count": [
-                    15
+                    10
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "crossbody mountain climber",
-                "start_time": "02:32:00",
-                "end_time": "03:03:00",
+                "name": "straight leg circle(L)",
+                "start_time": "05:20:00",
+                "end_time": "06:00:00",
                 "count": [
-                    52,
-                    51,
-                    53
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "russian twist",
-                "start_time": "03:13:00",
-                "end_time": "03:43:00",
-                "count": [
-                    25
+                    9
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "in&out straight away",
-                "start_time": "03:44:00",
-                "end_time": "04:14:00",
+                "name": "lower leg lift (R)",
+                "start_time": "06:00:00",
+                "end_time": "06:40:00",
                 "count": [
                     13
                 ],
@@ -393,41 +67,350 @@
                 "complex_action": false
             },
             {
-                "name": "plank with hip dips",
-                "start_time": "04:24:00",
-                "end_time": "04:54:00",
+                "name": "V bridge lift (feet connected)",
+                "start_time": "07:40:00",
+                "end_time": "08:20:00",
                 "count": [
-                    27,
-                    26,
-                    28
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "plank jacks",
-                "start_time": "04:54:00",
-                "end_time": "05:24:00",
-                "count": [
-                    25
+                    8
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": 100,
-                "start_time": "05:34:00",
-                "end_time": "06:04:00",
+                "name": "V bridge lift + butterfly",
+                "start_time": "08:20:00",
+                "end_time": "09:00:00",
                 "count": [
-                    70
+                    7
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "crunch",
-                "start_time": "06:04:00",
-                "end_time": "06:34:00",
+                "name": "V bridge hold + butterfly",
+                "start_time": "09:00:00",
+                "end_time": "09:40:00",
+                "count": [
+                    14
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "f2a0998327d23d09d1212088be1bb2a9",
+        "v_name": "watch?v=VC0Iac9oiKc",
+        "url": "https://www.youtube.com/watch?v=VC0Iac9oiKc",
+        "actions": [
+            {
+                "name": "seated side stretch",
+                "start_time": "00:20:00",
+                "end_time": "01:00:00",
+                "count": [
+                    7
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "dead bug",
+                "start_time": "01:50:00",
+                "end_time": "02:30:00",
+                "count": [
+                    7
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "single leg stretch",
+                "start_time": "02:30:00",
+                "end_time": "03:10:00",
+                "count": [
+                    11
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "double leg stretch",
+                "start_time": "03:10:00",
+                "end_time": "03:50:00",
+                "count": [
+                    6
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "bent wiper",
+                "start_time": "04:00:00",
+                "end_time": "04:40:00",
+                "count": [
+                    7
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "straight leg stretching(r)",
+                "start_time": "04:50:00",
+                "end_time": "05:30:00",
+                "count": [
+                    11
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "straight leg stretching(l)",
+                "start_time": "05:30:00",
+                "end_time": "06:10:00",
+                "count": [
+                    11
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "plank to push back",
+                "start_time": "07:10:00",
+                "end_time": "07:50:00",
+                "count": [
+                    6
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "box push ups",
+                "start_time": "07:50:00",
+                "end_time": "08:30:00",
+                "count": [
+                    8
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "thread the needle",
+                "start_time": "08:40:00",
+                "end_time": "09:20:00",
+                "count": [
+                    4
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "downward facing dog",
+                "start_time": "09:30:00",
+                "end_time": "10:10:00",
+                "count": [
+                    15
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "fcd2886c5f0bcb16613648df0cf885b7",
+        "v_name": "watch?v=Dv_DjkZeuYg",
+        "url": "https://www.youtube.com/watch?v=Dv_DjkZeuYg",
+        "actions": [
+            {
+                "name": "bridge lift",
+                "start_time": "00:16:00",
+                "end_time": "00:56:00",
+                "count": [
+                    11
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "bridge + leg extend[r]",
+                "start_time": "00:56:00",
+                "end_time": "01:36:00",
+                "count": [
+                    11
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "bridge + leg extend[l]",
+                "start_time": "01:36:00",
+                "end_time": "02:16:00",
+                "count": [
+                    11
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "toe taps",
+                "start_time": "02:16:00",
+                "end_time": "02:56:00",
+                "count": [
+                    16
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "singel leg reach",
+                "start_time": "02:59:00",
+                "end_time": "03:39:00",
+                "count": [
+                    16
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "criss cross",
+                "start_time": "03:39:00",
+                "end_time": "04:19:00",
+                "count": [
+                    15
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "back kick extend[r]",
+                "start_time": "04:30:00",
+                "end_time": "05:10:00",
+                "count": [
+                    14
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "side kick extend[r]",
+                "start_time": "05:10:00",
+                "end_time": "05:50:00",
+                "count": [
+                    13
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "back kick extend[l]",
+                "start_time": "05:50:00",
+                "end_time": "06:30:00",
+                "count": [
+                    15
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "side kick extend[r]",
+                "start_time": "06:30:00",
+                "end_time": "07:10:00",
+                "count": [
+                    13
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "table top reach[r]",
+                "start_time": "07:22:00",
+                "end_time": "08:02:00",
+                "count": [
+                    13
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "side kick extend[r]",
+                "start_time": "08:02:00",
+                "end_time": "08:42:00",
+                "count": [
+                    17
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "table top reach[l]",
+                "start_time": "08:42:00",
+                "end_time": "09:22:00",
+                "count": [
+                    14
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "table top reach pulse[l]",
+                "start_time": "09:24:00",
+                "end_time": "10:04:00",
+                "count": [
+                    19
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "990dabbbf82a08cf2e11e7bd31404f2f",
+        "v_name": "watch?v=aKTbP7dktcU",
+        "url": "https://www.youtube.com/watch?v=aKTbP7dktcU",
+        "actions": [
+            {
+                "name": "knee to chest",
+                "start_time": "00:16:00",
+                "end_time": "00:56:00",
+                "count": [
+                    14
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "toe taps",
+                "start_time": "00:56:00",
+                "end_time": "01:36:00",
+                "count": [
+                    47
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "single leg reaches",
+                "start_time": "01:36:00",
+                "end_time": "02:16:00",
+                "count": [
+                    15
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "wipe + double leg extension",
+                "start_time": "02:17:00",
+                "end_time": "02:47:00",
+                "count": [
+                    10
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "diamond crunches",
+                "start_time": "03:07:00",
+                "end_time": "03:47:00",
                 "count": [
                     12
                 ],
@@ -435,31 +418,267 @@
                 "complex_action": false
             },
             {
-                "name": "up&down plank",
-                "start_time": "06:44:00",
-                "end_time": "07:14:00",
+                "name": "single leg extension[r]",
+                "start_time": "04:28:00",
+                "end_time": "05:08:00",
                 "count": [
-                    11,
-                    10,
-                    12
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "heel tap",
-                "start_time": "07:54:00",
-                "end_time": "08:24:00",
-                "count": [
-                    28
+                    13
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "bicycle crunch",
-                "start_time": "08:24:00",
-                "end_time": "08:54:00",
+                "name": "sraight criss cross",
+                "start_time": "05:17:00",
+                "end_time": "05:58:00",
+                "count": [
+                    13
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "d1075a730357fb60fc2f7cf7274b67c1",
+        "v_name": "watch?v=UKHmTuWTIlI",
+        "url": "https://www.youtube.com/watch?v=UKHmTuWTIlI",
+        "actions": [
+            {
+                "name": "alternating knee crunch",
+                "start_time": "00:15:00",
+                "end_time": "00:55:00",
+                "count": [
+                    10
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "knee to chest",
+                "start_time": "00:57:00",
+                "end_time": "01:37:00",
+                "count": [
+                    16
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "double leg stretch + open",
+                "start_time": "01:47:00",
+                "end_time": "02:27:00",
+                "count": [
+                    8
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "straight leg lower",
+                "start_time": "02:27:00",
+                "end_time": "03:07:00",
+                "count": [
+                    14
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "frog extension",
+                "start_time": "03:07:00",
+                "end_time": "03:47:00",
+                "count": [
+                    9
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "hip lift",
+                "start_time": "03:58:00",
+                "end_time": "04:38:00",
+                "count": [
+                    14
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "cross + leg stretch [l]",
+                "start_time": "04:46:00",
+                "end_time": "05:26:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "cross + leg stretch [l]",
+                "start_time": "05:26:00",
+                "end_time": "06:06:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "3860bcc78f281a160b4e00d7403f72b4",
+        "v_name": "watch?v=DHYvd3CebMg",
+        "url": "https://www.youtube.com/watch?v=DHYvd3CebMg",
+        "actions": [
+            {
+                "name": "bend straighten",
+                "start_time": "01:00:00",
+                "end_time": "01:40:00",
+                "count": [
+                    35
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "staright arm lift",
+                "start_time": "02:21:00",
+                "end_time": "03:01:00",
+                "count": [
+                    21
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "bent oepn & close",
+                "start_time": "03:03:00",
+                "end_time": "03:43:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "elbow plank float forward",
+                "start_time": "04:34:00",
+                "end_time": "05:14:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "01e83deb57d2236b6a62402677a0c56e",
+        "v_name": "watch?v=sFO3SLZXHiI",
+        "url": "https://www.youtube.com/watch?v=sFO3SLZXHiI",
+        "actions": [
+            {
+                "name": "c-curl twist",
+                "start_time": "00:16:00",
+                "end_time": "00:56:00",
+                "count": [
+                    13
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "knee to chest",
+                "start_time": "00:56:00",
+                "end_time": "01:36:00",
+                "count": [
+                    17
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "bent scissor",
+                "start_time": "01:37:00",
+                "end_time": "02:17:00",
+                "count": [
+                    36
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "toe taps",
+                "start_time": "02:17:00",
+                "end_time": "02:57:00",
+                "count": [
+                    16
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "leg extension + crunch [l]",
+                "start_time": "02:59:00",
+                "end_time": "03:39:00",
+                "count": [
+                    11
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "side crunch + leg stretch [l]",
+                "start_time": "03:40:00",
+                "end_time": "04:20:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "leg extension + crunch [r]",
+                "start_time": "04:20:00",
+                "end_time": "05:00:00",
+                "count": [
+                    11
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "side crunch + leg stretch [r]",
+                "start_time": "05:00:00",
+                "end_time": "05:40:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "36f0d07e27602a8cdec16507b9fa4ea2",
+        "v_name": "watch?v=XuwK95dLR-s",
+        "url": "https://www.youtube.com/watch?v=XuwK95dLR-s",
+        "actions": [
+            {
+                "name": "open chest & press",
+                "start_time": "01:41:00",
+                "end_time": "02:21:00",
+                "count": [
+                    13
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "prayer pulses",
+                "start_time": "02:21:00",
+                "end_time": "03:01:00",
                 "count": [
                     26
                 ],
@@ -467,190 +686,41 @@
                 "complex_action": false
             },
             {
-                "name": "reverse crunch leg extension",
-                "start_time": "09:04:00",
-                "end_time": "09:34:00",
+                "name": "bicep curls",
+                "start_time": "03:01:00",
+                "end_time": "03:41:00",
                 "count": [
-                    12
+                    24
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "straight leg crunch",
-                "start_time": "09:34:00",
-                "end_time": "10:04:00",
+                "name": "straight arm lift",
+                "start_time": "05:07:00",
+                "end_time": "05:47:00",
                 "count": [
-                    8
+                    24
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "up&down plank",
-                "start_time": "10:14:00",
-                "end_time": "10:44:00",
+                "name": "stting tricep push",
+                "start_time": "06:39:00",
+                "end_time": "07:19:00",
                 "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "3977a2e05bacbfc8e3be9a48162bc169",
-        "v_name": "watch?v=Z_dgrjRlD_4",
-        "url": "https://www.youtube.com/watch?v=Z_dgrjRlD_4",
-        "actions": [
-            {
-                "name": "toe reach ",
-                "start_time": "00:26:00",
-                "end_time": "01:11:00",
-                "count": [
-                    21
+                    13
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "gaze up and infront",
-                "start_time": "01:11:00",
-                "end_time": "01:56:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "sit up",
-                "start_time": "01:56:00",
-                "end_time": "02:41:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "1/2 recline sit up",
-                "start_time": "02:41:00",
-                "end_time": "03:26:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "tuck to extend",
-                "start_time": "03:27:00",
-                "end_time": "04:12:00",
-                "count": [
-                    15
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "hollow to tuck",
-                "start_time": "04:12:00",
-                "end_time": "04:57:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "reverse crunch",
-                "start_time": "04:59:00",
-                "end_time": "05:42:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg lower to tuck",
-                "start_time": "05:43:00",
-                "end_time": "06:28:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "alternating leg lower",
-                "start_time": "06:29:00",
-                "end_time": "07:12:00",
-                "count": [
-                    28
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "hover to opp foot reach",
-                "start_time": "07:15:00",
+                "name": "box push-ups",
+                "start_time": "07:17:00",
                 "end_time": "07:57:00",
                 "count": [
-                    28
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "straight leg bicycle",
-                "start_time": "07:59:00",
-                "end_time": "08:41:00",
-                "count": [
-                    22
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "bicycle",
-                "start_time": "08:46:00",
-                "end_time": "09:26:00",
-                "count": [
-                    23
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "legs only bicycle",
-                "start_time": "09:27:00",
-                "end_time": "10:11:00",
-                "count": [
-                    43,
-                    42,
-                    44
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "alternating side crunch",
-                "start_time": "10:13:00",
-                "end_time": "10:57:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "crunch pulses",
-                "start_time": "10:57:00",
-                "end_time": "11:43:00",
-                "count": [
-                    47
+                    11
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
@@ -658,432 +728,14 @@
         ]
     },
     {
-        "v_id": "1ecff4779b390eb2f6731c8b344bd90d",
-        "v_name": "watch?v=54x6yjnzLms",
-        "url": "https://www.youtube.com/watch?v=54x6yjnzLms",
+        "v_id": "3ed21c1d344f973c6aeb08acf72ea7b5",
+        "v_name": "watch?v=c8quZnjGgHA",
+        "url": "https://www.youtube.com/watch?v=c8quZnjGgHA",
         "actions": [
             {
-                "name": "pelvic tilt + 1-knee lifts",
-                "start_time": "00:16:00",
-                "end_time": "00:46:00",
-                "count": [
-                    17
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "pelvic tilt + knee lifts",
-                "start_time": "00:45:00",
-                "end_time": "01:15:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "crunch + leg lift",
-                "start_time": "01:15:00",
-                "end_time": "01:45:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "scissor kicks",
-                "start_time": "01:45:00",
-                "end_time": "02:15:00",
-                "count": [
-                    47
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "pull over + toe touch",
-                "start_time": "02:15:00",
-                "end_time": "02:45:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "draw circles",
-                "start_time": "02:45:00",
-                "end_time": "03:15:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "1-leg pull over",
-                "start_time": "03:15:00",
-                "end_time": "03:45:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "butterfly lift",
-                "start_time": "03:45:00",
-                "end_time": "04:15:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "butterfly kick outs",
-                "start_time": "04:15:00",
-                "end_time": "04:45:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "sqieeze it in",
-                "start_time": "05:20:00",
-                "end_time": "05:45:00",
-                "count": [
-                    7
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "mountain cliber + hold",
-                "start_time": "05:45:00",
-                "end_time": "06:15:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "kick front + up",
-                "start_time": "06:47:00",
-                "end_time": "07:15:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "pull over +toe touch",
-                "start_time": "07:15:00",
-                "end_time": "07:45:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "1-leg pam knife",
-                "start_time": "07:46:00",
-                "end_time": "08:15:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "plank + lower AB crunch",
-                "start_time": "08:50:00",
-                "end_time": "09:15:00",
-                "count": [
-                    8,
-                    7,
-                    9
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "14c2c3f47bd06f92923f2f98a5625846",
-        "v_name": "watch?v=_yNHzgXUHqY",
-        "url": "https://www.youtube.com/watch?v=_yNHzgXUHqY",
-        "actions": [
-            {
-                "name": "drop squats",
-                "start_time": "00:46:00",
-                "end_time": "01:47:00",
-                "count": [
-                    40
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "half burpees",
-                "start_time": "01:47:00",
-                "end_time": "02:47:00",
-                "count": [
-                    17
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "high knees",
-                "start_time": "02:49:00",
-                "end_time": "03:46:00",
-                "count": [
-                    146,
-                    145,
-                    147
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "butt kick squat jumps",
-                "start_time": "03:47:00",
-                "end_time": "04:47:00",
-                "count": [
-                    23
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "push up toe tap",
-                "start_time": "04:48:00",
-                "end_time": "05:48:00",
-                "count": [
-                    14,
-                    13,
-                    15
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "bicycle crunches",
-                "start_time": "05:50:00",
-                "end_time": "06:48:00",
-                "count": [
-                    114,
-                    113,
-                    115
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "side plank raises(left side)",
-                "start_time": "06:50:00",
-                "end_time": "07:48:00",
-                "count": [
-                    43,
-                    42,
-                    44
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "side plank raises(right side)",
-                "start_time": "07:52:00",
-                "end_time": "08:48:00",
-                "count": [
-                    51
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "full burpees",
-                "start_time": "08:48:00",
-                "end_time": "09:48:00",
-                "count": [
-                    16
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "mountain climbers",
-                "start_time": "09:46:00",
-                "end_time": "10:47:00",
-                "count": [
-                    120
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "6770817f4ecee7eaa46f9863214dbd21",
-        "v_name": "watch?v=Q-vuR4PJh2c",
-        "url": "https://www.youtube.com/watch?v=Q-vuR4PJh2c",
-        "actions": [
-            {
-                "name": "leg lift circles",
-                "start_time": "00:14:00",
-                "end_time": "00:44:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "reverse crunch variation",
-                "start_time": "00:44:00",
-                "end_time": "01:14:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg lift",
-                "start_time": "01:14:00",
-                "end_time": "01:44:00",
-                "count": [
-                    67
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "cross crunch",
-                "start_time": "01:44:00",
-                "end_time": "02:14:00",
-                "count": [
-                    17
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "russian twist",
-                "start_time": "02:14:00",
-                "end_time": "02:44:00",
-                "count": [
-                    35
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg lift",
-                "start_time": "02:44:00",
-                "end_time": "03:14:00",
-                "count": [
-                    15
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "flutter kicks",
-                "start_time": "03:14:00",
-                "end_time": "03:44:00",
-                "count": [
-                    90
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "toe taps",
-                "start_time": "03:44:00",
-                "end_time": "04:14:00",
-                "count": [
-                    56
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "reverse crunch variantion",
-                "start_time": "04:14:00",
-                "end_time": "04:44:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "roll ins",
-                "start_time": "04:44:00",
-                "end_time": "05:14:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "bicycle crunch",
-                "start_time": "05:14:00",
-                "end_time": "05:44:00",
-                "count": [
-                    40
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "side plank pull left",
-                "start_time": "05:44:00",
-                "end_time": "06:14:00",
-                "count": [
-                    21
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "side plank reach through left",
-                "start_time": "06:14:00",
-                "end_time": "06:44:00",
-                "count": [
-                    11,
-                    10,
-                    12
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "side plank pull right",
-                "start_time": "07:14:00",
-                "end_time": "07:44:00",
-                "count": [
-                    19,
-                    18,
-                    20
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "side plank reach through right",
-                "start_time": "07:44:00",
-                "end_time": "08:14:00",
+                "name": "bent leg rain bow [r]",
+                "start_time": "00:28:00",
+                "end_time": "01:08:00",
                 "count": [
                     12,
                     11,
@@ -1093,46 +745,9 @@
                 "complex_action": false
             },
             {
-                "name": "plank back & forth",
-                "start_time": "09:14:00",
-                "end_time": "09:44:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "cross-spider plank",
-                "start_time": "09:44:00",
-                "end_time": "10:14:00",
-                "count": [
-                    22
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "acc1df64d14b860e4ea2ba5d15798437",
-        "v_name": "watch?v=cLO4uRh4xDE",
-        "url": "https://www.youtube.com/watch?v=cLO4uRh4xDE",
-        "actions": [
-            {
-                "name": "crunch +weight",
-                "start_time": "00:21:00",
-                "end_time": "00:51:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "sit up + weight",
-                "start_time": "00:51:00",
-                "end_time": "01:21:00",
+                "name": "staright leg rainbow [r]",
+                "start_time": "01:08:00",
+                "end_time": "01:48:00",
                 "count": [
                     8
                 ],
@@ -1140,1199 +755,39 @@
                 "complex_action": false
             },
             {
-                "name": "sitting leg lift",
-                "start_time": "01:51:00",
-                "end_time": "02:21:00",
-                "count": [
-                    15
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "crunch + knee/leg lift",
-                "start_time": "02:21:00",
-                "end_time": "02:51:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "jack knife",
-                "start_time": "02:51:00",
-                "end_time": "03:21:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg lift + roll in",
-                "start_time": "03:21:00",
-                "end_time": "03:51:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "AB hold + knee touches",
-                "start_time": "03:51:00",
-                "end_time": "04:21:00",
-                "count": [
-                    19
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "russian twist + weight",
-                "start_time": "04:21:00",
-                "end_time": "04:51:00",
-                "count": [
-                    21
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "russian twist + pulses",
-                "start_time": "04:51:00",
-                "end_time": "05:21:00",
-                "count": [
-                    16
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "straight leg bicycle",
-                "start_time": "05:21:00",
-                "end_time": "05:51:00",
-                "count": [
-                    21
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "AB hold +arm circles",
-                "start_time": "05:51:00",
-                "end_time": "06:21:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "stretch out +knee touches",
-                "start_time": "06:21:00",
-                "end_time": "06:51:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "side plank lift",
-                "start_time": "06:51:00",
-                "end_time": "07:21:00",
-                "count": [
-                    13,
-                    12,
-                    14
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "crawl, right",
-                "start_time": "08:51:00",
-                "end_time": "09:21:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "crawl, left",
-                "start_time": "09:21:00",
-                "end_time": "09:51:00",
-                "count": [
-                    9
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "764ecccd5e94416d415a24aebb1dbc21",
-        "v_name": "watch?v=h9uZVP_qLVo",
-        "url": "https://www.youtube.com/watch?v=h9uZVP_qLVo",
-        "actions": [
-            {
-                "name": "sitting lift",
-                "start_time": "00:15:00",
-                "end_time": "00:45:00",
-                "count": [
-                    24,
-                    23,
-                    25
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "shift left-right",
-                "start_time": "00:45:00",
-                "end_time": "01:15:00",
-                "count": [
-                    17,
-                    16,
-                    18
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "sideways lift",
-                "start_time": "01:15:00",
-                "end_time": "01:45:00",
-                "count": [
-                    22
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "tap to upper leg",
-                "start_time": "01:45:00",
-                "end_time": "02:15:00",
-                "count": [
-                    25
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "lower leg slide",
-                "start_time": "02:15:00",
-                "end_time": "02:45:00",
-                "count": [
-                    16
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "halfmoon",
-                "start_time": "02:45:00",
-                "end_time": "03:15:00",
-                "count": [
-                    23,
-                    22,
-                    24
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "5 pluses, 3 long",
-                "start_time": "03:15:00",
-                "end_time": "03:45:00",
-                "count": [
-                    4
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "sitting lift",
-                "start_time": "05:15:00",
-                "end_time": "05:45:00",
-                "count": [
-                    21
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "shift left-right",
-                "start_time": "05:45:00",
-                "end_time": "06:15:00",
-                "count": [
-                    15
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "sideways lift",
-                "start_time": "06:17:00",
-                "end_time": "06:45:00",
-                "count": [
-                    20,
-                    19,
-                    21
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "tap to upper leg",
-                "start_time": "06:45:00",
-                "end_time": "07:15:00",
-                "count": [
-                    22
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "lower leg slide",
-                "start_time": "07:15:00",
-                "end_time": "07:45:00",
-                "count": [
-                    15,
-                    14,
-                    16
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "halfmoon",
-                "start_time": "07:45:00",
-                "end_time": "08:15:00",
-                "count": [
-                    23,
-                    22,
-                    24
-                ],
-                "fuzzy_action": true,
-                "complex_action": false
-            },
-            {
-                "name": "5 pulses, 3 long",
-                "start_time": "08:15:00",
-                "end_time": "08:45:00",
-                "count": [
-                    4
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "54cd3d4802f41a8f9195d165159f07cc",
-        "v_name": "BV1zK421v77o",
-        "url": "https://www.bilibili.com/video/BV1zK421v77o/",
-        "actions": [
-            {
-                "name": "back & forth",
-                "start_time": "00:10:00",
-                "end_time": "00:40:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "arm circles",
-                "start_time": "00:40:00",
-                "end_time": "01:10:00",
-                "count": [
-                    33
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "back crawl",
-                "start_time": "01:10:00",
-                "end_time": "01:40:00",
-                "count": [
-                    19
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "swim",
-                "start_time": "01:40:00",
-                "end_time": "02:10:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "forward crawl",
-                "start_time": "02:10:00",
-                "end_time": "02:40:00",
-                "count": [
-                    19
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "ALT.pull back",
-                "start_time": "02:40:00",
-                "end_time": "03:10:00",
-                "count": [
-                    18
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "pull back",
-                "start_time": "03:10:00",
-                "end_time": "03:40:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "chest of opener",
-                "start_time": "03:40:00",
-                "end_time": "04:10:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "ALT.reach up",
-                "start_time": "04:10:00",
-                "end_time": "04:40:00",
-                "count": [
-                    16
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "reach up",
-                "start_time": "04:40:00",
-                "end_time": "05:10:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "elbow press",
-                "start_time": "05:10:00",
-                "end_time": "05:40:00",
-                "count": [
-                    19
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "side to side",
-                "start_time": "06:10:00",
-                "end_time": "06:40:00",
-                "count": [
-                    20
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "behind back reach",
-                "start_time": "06:40:00",
-                "end_time": "07:10:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "shoulder press",
-                "start_time": "07:10:00",
-                "end_time": "07:40:00",
-                "count": [
-                    15
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "shoulder roll",
-                "start_time": "08:10:00",
-                "end_time": "08:40:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "arm rainbow",
-                "start_time": "08:10:00",
-                "end_time": "08:40:00",
-                "count": [
-                    9
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "side stretch(R)",
-                "start_time": "08:40:00",
-                "end_time": "09:10:00",
-                "count": [
-                    7
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "side stretch(L)",
-                "start_time": "09:10:00",
-                "end_time": "09:40:00",
-                "count": [
-                    7
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "93107d6739e0076f7ad84c8ba9425e92",
-        "v_name": "BV1j24y1u7kn",
-        "url": "https://www.bilibili.com/video/BV1j24y1u7kn/",
-        "actions": [
-            {
-                "name": "push ups side to side",
-                "start_time": "02:00:00",
-                "end_time": "02:54:00",
-                "count": [
-                    9
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "in and outs",
-                "start_time": "03:03:00",
-                "end_time": "03:53:00",
-                "count": [
-                    33
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "high plank to low plank",
-                "start_time": "04:05:00",
-                "end_time": "04:51:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "burpees",
-                "start_time": "06:03:00",
-                "end_time": "06:52:00",
-                "count": [
-                    16
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "switching lunges",
-                "start_time": "07:04:00",
-                "end_time": "07:51:00",
-                "count": [
-                    37
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "jump squats side to side",
-                "start_time": "08:03:00",
-                "end_time": "08:53:00",
-                "count": [
-                    31
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "jumping jacks",
-                "start_time": "10:05:00",
-                "end_time": "10:53:00",
-                "count": [
-                    52
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "a1ab4a303704a727acfece184060187c",
-        "v_name": "BV1hu41157UD",
-        "url": "https://www.bilibili.com/video/BV1hu41157UD/",
-        "actions": [
-            {
-                "name": "extend + flex",
-                "start_time": "00:52:00",
-                "end_time": "01:22:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "flex +lift",
-                "start_time": "01:23:00",
-                "end_time": "01:53:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "ankle pumps",
-                "start_time": "01:53:00",
-                "end_time": "02:23:00",
-                "count": [
-                    17
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "extend +flex",
-                "start_time": "02:23:00",
-                "end_time": "02:53:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "flex + lift",
-                "start_time": "02:53:00",
-                "end_time": "03:23:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "ankle pumps",
-                "start_time": "03:23:00",
-                "end_time": "03:53:00",
-                "count": [
-                    17
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "side pyramid lift",
-                "start_time": "03:53:00",
-                "end_time": "04:23:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg circles",
-                "start_time": "04:53:00",
-                "end_time": "05:23:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "side pyramid lift",
-                "start_time": "05:53:00",
-                "end_time": "06:23:00",
-                "count": [
-                    7
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg circles",
-                "start_time": "06:53:00",
-                "end_time": "07:23:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "1e6a72cdafb41584ce741bb8f7c9a0ca",
-        "v_name": "BV1uj411U7fA",
-        "url": "https://www.bilibili.com/video/BV1uj411U7fA/",
-        "actions": [
-            {
-                "name": "wall bicycle",
-                "start_time": "00:15:00",
-                "end_time": "00:45:00",
-                "count": [
-                    15
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "wall bridge",
-                "start_time": "00:45:00",
-                "end_time": "01:15:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "1 leg bridge(R)",
-                "start_time": "01:15:00",
-                "end_time": "01:45:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "1 leg bridge(L)",
-                "start_time": "01:45:00",
-                "end_time": "02:15:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "wall marching",
-                "start_time": "02:16:00",
-                "end_time": "02:45:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "cross crunch(R)",
-                "start_time": "02:45:00",
-                "end_time": "03:15:00",
-                "count": [
-                    16
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "cross crunch(L)",
-                "start_time": "03:15:00",
-                "end_time": "03:45:00",
-                "count": [
-                    16
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "wall walk",
-                "start_time": "03:45:00",
-                "end_time": "04:15:00",
-                "count": [
-                    7
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg slides",
-                "start_time": "04:17:00",
-                "end_time": "04:45:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "hip slides",
-                "start_time": "04:45:00",
-                "end_time": "05:15:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "wall twist",
-                "start_time": "05:18:00",
-                "end_time": "05:45:00",
-                "count": [
-                    33
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "crunch",
-                "start_time": "05:46:00",
-                "end_time": "06:15:00",
-                "count": [
-                    16
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "baby cobra",
-                "start_time": "06:51:00",
-                "end_time": "07:15:00",
-                "count": [
-                    5
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "booty slide",
-                "start_time": "07:21:00",
-                "end_time": "07:45:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "wall push",
-                "start_time": "08:15:00",
-                "end_time": "08:45:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "kickback(R)",
-                "start_time": "08:45:00",
-                "end_time": "09:15:00",
-                "count": [
-                    17
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "kickback(L)",
-                "start_time": "09:15:00",
-                "end_time": "09:45:00",
-                "count": [
-                    17
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "fc3d98d551d6df6f66ba05d17c7cddcd",
-        "v_name": "BV1nF411o7Af",
-        "url": "https://www.bilibili.com/video/BV1nF411o7Af/",
-        "actions": [
-            {
-                "name": "bridge circle",
-                "start_time": "00:14:00",
-                "end_time": "00:44:00",
-                "count": [
-                    15
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "1 leg through(R)",
-                "start_time": "00:44:00",
-                "end_time": "01:14:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "bridge + cross crunch",
-                "start_time": "01:14:00",
-                "end_time": "01:44:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "1 leg through(L)",
-                "start_time": "01:44:00",
-                "end_time": "02:14:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "bridge + cross crunch",
-                "start_time": "02:14:00",
-                "end_time": "02:44:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "bridge +crunch",
-                "start_time": "02:46:00",
-                "end_time": "03:14:00",
-                "count": [
-                    7
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "cross crunch",
-                "start_time": "03:14:00",
-                "end_time": "03:44:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "ALT.leg lifts",
-                "start_time": "03:45:00",
-                "end_time": "04:15:00",
-                "count": [
-                    17
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "bicycle crunch",
-                "start_time": "04:15:00",
-                "end_time": "04:45:00",
-                "count": [
-                    31
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg lift variantion",
-                "start_time": "05:20:00",
-                "end_time": "05:45:00",
-                "count": [
-                    6
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "knee to elbow",
-                "start_time": "05:45:00",
-                "end_time": "06:15:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "half plank crunch",
-                "start_time": "06:15:00",
-                "end_time": "06:45:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "clamshell + hip lift",
-                "start_time": "06:45:00",
-                "end_time": "07:15:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "clamshell twist",
-                "start_time": "07:15:00",
-                "end_time": "07:45:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "kickback",
-                "start_time": "07:45:00",
-                "end_time": "08:15:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg lift variantion",
-                "start_time": "08:45:00",
-                "end_time": "09:15:00",
-                "count": [
-                    6
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "knee to elbow",
-                "start_time": "09:15:00",
-                "end_time": "09:45:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "half plank crunch",
-                "start_time": "09:45:00",
-                "end_time": "10:15:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "clamshell +hip lift",
-                "start_time": "10:15:00",
-                "end_time": "10:45:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "clamshell twist",
-                "start_time": "10:45:00",
-                "end_time": "11:15:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "kickback",
-                "start_time": "11:15:00",
-                "end_time": "11:45:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "cbc15c42a1594949711ac9a7c8c465e1",
-        "v_name": "BV1Xo4y1E7cg",
-        "url": "https://www.bilibili.com/video/BV1Xo4y1E7cg/",
-        "actions": [
-            {
-                "name": "tiny steps",
-                "start_time": "00:44:00",
-                "end_time": "01:14:00",
-                "count": [
-                    19
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "warrior 2 + up",
-                "start_time": "01:14:00",
-                "end_time": "01:44:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "warrior 2 + up",
-                "start_time": "02:14:00",
-                "end_time": "02:44:00",
-                "count": [
-                    9
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "yoga squat circle",
-                "start_time": "03:14:00",
-                "end_time": "03:44:00",
-                "count": [
-                    6
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "3 point knee tap (R)",
-                "start_time": "04:45:00",
-                "end_time": "05:15:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "3 point knee tap (L)",
-                "start_time": "06:17:00",
-                "end_time": "06:45:00",
-                "count": [
-                    9
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "shoulder in & out",
-                "start_time": "07:47:00",
-                "end_time": "08:15:00",
-                "count": [
-                    7
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "4555d6aead3c90604b2c19ee3f1dc820",
-        "v_name": "BV1VB42emEow",
-        "url": "https://www.bilibili.com/video/BV1VB42emEow/",
-        "actions": [
-            {
-                "name": "hip circle",
-                "start_time": "00:11:00",
-                "end_time": "00:41:00",
-                "count": [
-                    9
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "arms cross + leg curl",
-                "start_time": "00:42:00",
-                "end_time": "01:15:00",
-                "count": [
-                    31
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "reach down + reach up extension",
-                "start_time": "01:17:00",
-                "end_time": "01:52:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg press hamstring stretch",
-                "start_time": "01:55:00",
+                "name": "straight leg diagonals [r]",
+                "start_time": "01:50:00",
                 "end_time": "02:31:00",
                 "count": [
-                    15
+                    10
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "side step + lat stretch",
-                "start_time": "02:31:00",
-                "end_time": "03:05:00",
+                "name": "bent leg rain bow [l]",
+                "start_time": "02:38:00",
+                "end_time": "03:18:00",
                 "count": [
-                    16
+                    11
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "sumo fly",
-                "start_time": "03:05:00",
-                "end_time": "03:46:00",
+                "name": "staright leg rainbow [l]",
+                "start_time": "03:18:00",
+                "end_time": "03:58:00",
+                "count": [
+                    8
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "straight leg diagonals [l]",
+                "start_time": "03:58:00",
+                "end_time": "04:38:00",
                 "count": [
                     10
                 ],
@@ -2340,99 +795,69 @@
                 "complex_action": false
             },
             {
-                "name": "cross step +shoulder mobility",
-                "start_time": "03:46:00",
-                "end_time": "04:25:00",
+                "name": "plan + open up",
+                "start_time": "04:48:00",
+                "end_time": "05:28:00",
                 "count": [
-                    19
+                    6
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "body twist + arm raise",
-                "start_time": "04:25:00",
-                "end_time": "05:02:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "knee hug",
-                "start_time": "05:02:00",
-                "end_time": "05:39:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "shoulder + chest stretch",
+                "name": "chest lift + leg extension {r & l }",
                 "start_time": "05:39:00",
-                "end_time": "06:14:00",
+                "end_time": "06:19:00",
                 "count": [
-                    13
+                    9
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "good morning + twist",
-                "start_time": "06:15:00",
-                "end_time": "06:55:00",
+                "name": "staight leg lift + chest lift [r]",
+                "start_time": "06:26:00",
+                "end_time": "07:06:00",
                 "count": [
-                    10
+                    7
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "high kick toe touch",
-                "start_time": "06:55:00",
-                "end_time": "07:33:00",
+                "name": "staight leg lift + chest lift [l]",
+                "start_time": "07:06:00",
+                "end_time": "07:46:00",
                 "count": [
-                    20
+                    6
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "back step + arm circle",
-                "start_time": "07:34:00",
-                "end_time": "08:10:00",
+                "name": "seated core twist",
+                "start_time": "07:57:00",
+                "end_time": "08:37:00",
                 "count": [
-                    13
+                    11
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "hamstring sweeps",
-                "start_time": "08:10:00",
-                "end_time": "08:45:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "chest opening +leg curl",
+                "name": "side plank crunch [r]",
                 "start_time": "08:45:00",
-                "end_time": "09:21:00",
+                "end_time": "09:25:00",
                 "count": [
-                    31
+                    10
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "rainbow",
-                "start_time": "09:21:00",
-                "end_time": "09:57:00",
+                "name": "straight leg lift [r]",
+                "start_time": "09:25:00",
+                "end_time": "10:05:00",
                 "count": [
                     15
                 ],
@@ -2440,19 +865,9 @@
                 "complex_action": false
             },
             {
-                "name": "knee circle",
-                "start_time": "09:57:00",
-                "end_time": "10:36:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "single leg deadlift",
-                "start_time": "10:36:00",
-                "end_time": "11:13:00",
+                "name": "side plank crunch [l]",
+                "start_time": "10:16:00",
+                "end_time": "10:56:00",
                 "count": [
                     10
                 ],
@@ -2460,31 +875,11 @@
                 "complex_action": false
             },
             {
-                "name": "side step + chest stretch",
-                "start_time": "11:13:00",
-                "end_time": "11:50:00",
+                "name": "straight leg lift [l]",
+                "start_time": "10:56:00",
+                "end_time": "11:36:00",
                 "count": [
-                    27
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "calf stretch",
-                "start_time": "11:50:00",
-                "end_time": "12:28:00",
-                "count": [
-                    22
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "hip flexor stretch + back extension",
-                "start_time": "12:28:00",
-                "end_time": "13:06:00",
-                "count": [
-                    10
+                    17
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
@@ -2492,546 +887,52 @@
         ]
     },
     {
-        "v_id": "0a9a588e6542aa12823b67ce576a4d85",
-        "v_name": "watch?v=WtjYCYdIyT4",
-        "url": "https://www.youtube.com/watch?v=WtjYCYdIyT4",
+        "v_id": "17e2d98f0088e1d9414ee32094d27478",
+        "v_name": "watch?v=uep2HH5MW7k",
+        "url": "https://www.youtube.com/watch?v=uep2HH5MW7k",
         "actions": [
             {
-                "name": "leg lift",
-                "start_time": "00:10:00",
-                "end_time": "00:40:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "donkey kick + cross",
-                "start_time": "00:40:00",
-                "end_time": "01:10:00",
-                "count": [
-                    16
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "donkey twist",
-                "start_time": "01:10:00",
-                "end_time": "01:40:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "rainbow",
-                "start_time": "01:40:00",
-                "end_time": "02:10:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "crossed side kick",
-                "start_time": "02:10:00",
-                "end_time": "02:40:00",
-                "count": [
-                    9
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "hamstring curl",
-                "start_time": "02:40:00",
-                "end_time": "03:10:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "side leg lift",
-                "start_time": "03:40:00",
-                "end_time": "04:10:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg swipe",
-                "start_time": "04:10:00",
-                "end_time": "04:40:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg extension",
-                "start_time": "04:40:00",
-                "end_time": "05:10:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg circle",
-                "start_time": "05:10:00",
-                "end_time": "05:40:00",
-                "count": [
-                    22
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg lift",
-                "start_time": "06:10:00",
-                "end_time": "06:40:00",
-                "count": [
-                    14
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "donkey kick + cross",
-                "start_time": "06:40:00",
-                "end_time": "07:10:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "donkey twist",
-                "start_time": "07:10:00",
-                "end_time": "07:40:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "rainbow",
-                "start_time": "07:40:00",
-                "end_time": "08:10:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "crossed side kick",
-                "start_time": "08:10:00",
-                "end_time": "08:40:00",
-                "count": [
-                    9
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "hamstring curl",
-                "start_time": "08:40:00",
-                "end_time": "09:10:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "side leg lift",
-                "start_time": "09:44:00",
-                "end_time": "10:10:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg swipe",
-                "start_time": "10:10:00",
-                "end_time": "10:40:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg extension",
-                "start_time": "10:40:00",
-                "end_time": "11:10:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg circle",
-                "start_time": "11:10:00",
-                "end_time": "11:40:00",
-                "count": [
-                    19
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "pointe to heel bridge",
-                "start_time": "12:10:00",
-                "end_time": "12:40:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "pointed glute bridge",
-                "start_time": "12:40:00",
-                "end_time": "13:10:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "1-leg glute bridge",
-                "start_time": "13:40:00",
-                "end_time": "14:10:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "1-leg glute bridge",
-                "start_time": "14:10:00",
-                "end_time": "14:40:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "7a184635bb8578128a14c25954e0a873",
-        "v_name": "watch?v=oT_v_mNejhk",
-        "url": "https://www.youtube.com/watch?v=oT_v_mNejhk",
-        "actions": [
-            {
-                "name": "leg activation(R)",
-                "start_time": "00:13:00",
-                "end_time": "00:43:00",
-                "count": [
-                    9
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "leg activation(L)",
-                "start_time": "00:43:00",
-                "end_time": "01:13:00",
-                "count": [
-                    9
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "lateral swipe(R)",
-                "start_time": "01:13:00",
-                "end_time": "01:43:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "lateral swipe(L)",
-                "start_time": "01:43:00",
-                "end_time": "02:13:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "knee circles",
-                "start_time": "02:13:00",
-                "end_time": "02:43:00",
-                "count": [
-                    20
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "side + back lift",
-                "start_time": "03:16:00",
-                "end_time": "03:43:00",
-                "count": [
-                    7
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "pyramid lift",
-                "start_time": "03:43:00",
-                "end_time": "04:13:00",
-                "count": [
-                    6
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "circle + knee tuck",
-                "start_time": "04:13:00",
-                "end_time": "04:43:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "clamshell + pointe",
-                "start_time": "04:43:00",
-                "end_time": "05:13:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "inner thigh lift",
-                "start_time": "05:43:00",
-                "end_time": "06:13:00",
-                "count": [
-                    29
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "inner thigh pushback",
-                "start_time": "06:13:00",
-                "end_time": "06:43:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "thigh combo",
-                "start_time": "06:43:00",
-                "end_time": "07:13:00",
-                "count": [
-                    31
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "inner thigh circles",
-                "start_time": "07:13:00",
-                "end_time": "07:43:00",
-                "count": [
-                    24
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "side +back lift",
-                "start_time": "08:19:00",
-                "end_time": "08:43:00",
-                "count": [
-                    6
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "pyramid lift",
-                "start_time": "08:43:00",
-                "end_time": "09:13:00",
-                "count": [
-                    7
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "circle + knee tuck",
-                "start_time": "09:13:00",
-                "end_time": "09:43:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "clamshell + pointe",
-                "start_time": "09:43:00",
-                "end_time": "10:13:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "inner thigh lift",
-                "start_time": "10:43:00",
-                "end_time": "11:13:00",
-                "count": [
-                    25
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "inner thigh pushback",
-                "start_time": "11:13:00",
-                "end_time": "11:43:00",
-                "count": [
-                    15
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "thigh combo",
-                "start_time": "11:43:00",
-                "end_time": "12:13:00",
-                "count": [
-                    32
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "inner thigh circles",
-                "start_time": "12:13:00",
-                "end_time": "12:43:00",
-                "count": [
-                    29
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "sigle leg bridge(L)",
-                "start_time": "13:13:00",
-                "end_time": "13:43:00",
-                "count": [
-                    8
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "sigle leg bridge(R)",
-                "start_time": "13:43:00",
-                "end_time": "14:13:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            }
-        ]
-    },
-    {
-        "v_id": "89e845984028a7ed30dfded20c0c00cb",
-        "v_name": "watch?v=1ljTpMJPank",
-        "url": "https://www.youtube.com/watch?v=1ljTpMJPank",
-        "actions": [
-            {
-                "name": "cat cow",
-                "start_time": "00:12:00",
-                "end_time": "00:42:00",
-                "count": [
-                    7
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "high plank fold",
+                "name": "high knees",
                 "start_time": "00:42:00",
                 "end_time": "01:12:00",
                 "count": [
-                    8
+                    17
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "pull in & out (R)",
+                "name": "sun rises",
                 "start_time": "01:12:00",
                 "end_time": "01:42:00",
                 "count": [
-                    10
+                    11
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "reach through(R)",
+                "name": "hip circles",
                 "start_time": "01:42:00",
                 "end_time": "02:12:00",
                 "count": [
-                    6
+                    7
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "pull in & out (L)",
+                "name": "high knee & cross punches",
                 "start_time": "02:12:00",
                 "end_time": "02:42:00",
                 "count": [
-                    10
+                    21
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "reach through(L)",
+                "name": "slow sq",
                 "start_time": "02:42:00",
                 "end_time": "03:12:00",
                 "count": [
@@ -3041,39 +942,56 @@
                 "complex_action": false
             },
             {
-                "name": "high plank lift (R)",
+                "name": "cross toe touches",
                 "start_time": "03:12:00",
                 "end_time": "03:42:00",
                 "count": [
-                    13
+                    10
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "lift curl(R)",
+                "name": "step jacks",
                 "start_time": "03:42:00",
                 "end_time": "04:12:00",
                 "count": [
-                    6
+                    30
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "high plank lift (L)",
+                "name": "standing donkey kicks",
                 "start_time": "04:12:00",
                 "end_time": "04:42:00",
                 "count": [
-                    12
+                    10
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "c53d1fc4ed3e56bfbdc63d7ce3bad93a",
+        "v_name": "watch?v=Av-XvtVjVSs",
+        "url": "https://www.youtube.com/watch?v=Av-XvtVjVSs",
+        "actions": [
+            {
+                "name": "cross punches",
+                "start_time": "00:46:00",
+                "end_time": "01:16:00",
+                "count": [
+                    26
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "lift curl(L)",
-                "start_time": "04:42:00",
-                "end_time": "05:12:00",
+                "name": "twist crunches",
+                "start_time": "01:16:00",
+                "end_time": "01:46:00",
                 "count": [
                     7
                 ],
@@ -3081,119 +999,9 @@
                 "complex_action": false
             },
             {
-                "name": "tiny walks + knee",
-                "start_time": "05:12:00",
-                "end_time": "05:42:00",
-                "count": [
-                    5
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "roll up",
-                "start_time": "06:12:00",
-                "end_time": "06:42:00",
-                "count": [
-                    4
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "extended crunch",
-                "start_time": "06:42:00",
-                "end_time": "07:12:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "floor taps + extend",
-                "start_time": "07:12:00",
-                "end_time": "07:42:00",
-                "count": [
-                    7
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "grab your leg",
-                "start_time": "07:42:00",
-                "end_time": "08:12:00",
-                "count": [
-                    16
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "lifted crunch",
-                "start_time": "08:12:00",
-                "end_time": "08:42:00",
-                "count": [
-                    12
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "bow crunch(R)",
-                "start_time": "08:42:00",
-                "end_time": "09:12:00",
-                "count": [
-                    13
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "bridge +floor taps(R)",
-                "start_time": "09:12:00",
-                "end_time": "09:42:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "bow crunch(L)",
-                "start_time": "09:42:00",
-                "end_time": "10:12:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "bridge + floor taps(L)",
-                "start_time": "10:12:00",
-                "end_time": "10:42:00",
-                "count": [
-                    11
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "half plank crunch(R)",
-                "start_time": "11:15:00",
-                "end_time": "11:42:00",
-                "count": [
-                    10
-                ],
-                "fuzzy_action": false,
-                "complex_action": false
-            },
-            {
-                "name": "half plank opener(R)",
-                "start_time": "11:42:00",
-                "end_time": "12:12:00",
+                "name": "body extension",
+                "start_time": "01:46:00",
+                "end_time": "02:16:00",
                 "count": [
                     9
                 ],
@@ -3201,19 +1009,29 @@
                 "complex_action": false
             },
             {
-                "name": "half plank crunch(L)",
-                "start_time": "12:42:00",
-                "end_time": "13:12:00",
+                "name": "high knee jacks",
+                "start_time": "02:16:00",
+                "end_time": "02:46:00",
                 "count": [
-                    10
+                    14
                 ],
                 "fuzzy_action": false,
                 "complex_action": false
             },
             {
-                "name": "half plank opener(L)",
-                "start_time": "13:12:00",
-                "end_time": "13:42:00",
+                "name": "sq pulses & toe taps",
+                "start_time": "03:17:00",
+                "end_time": "03:47:00",
+                "count": [
+                    4
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "in &out steps",
+                "start_time": "03:47:00",
+                "end_time": "04:17:00",
                 "count": [
                     8
                 ],
@@ -3221,11 +1039,682 @@
                 "complex_action": false
             },
             {
-                "name": "reverse plank lift",
-                "start_time": "14:20:00",
-                "end_time": "14:45:00",
+                "name": "inhale & exhale & cool - down stretches",
+                "start_time": "04:47:00",
+                "end_time": "05:17:00",
+                "count": [
+                    4
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "f449825fb99c24f7889641141beaa849",
+        "v_name": "watch?v=qi2G6oXEsaM",
+        "url": "https://www.youtube.com/watch?v=qi2G6oXEsaM",
+        "actions": [
+            {
+                "name": "duck + punch",
+                "start_time": "00:25:00",
+                "end_time": "01:10:00",
+                "count": [
+                    42
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "reverse lunge to knee drive(R)",
+                "start_time": "01:25:00",
+                "end_time": "02:10:00",
+                "count": [
+                    21
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "reverse lunge to knee drive(L)",
+                "start_time": "02:25:00",
+                "end_time": "03:10:00",
+                "count": [
+                    20
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "push up + side plank reach",
+                "start_time": "03:25:00",
+                "end_time": "04:10:00",
+                "count": [
+                    11
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "fun squat",
+                "start_time": "04:25:00",
+                "end_time": "05:10:00",
+                "count": [
+                    21
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "step back + front kick",
+                "start_time": "05:25:00",
+                "end_time": "06:10:00",
+                "count": [
+                    26
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "plank step outs to pyramid",
+                "start_time": "07:25:00",
+                "end_time": "08:10:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "leg extensions",
+                "start_time": "08:25:00",
+                "end_time": "09:10:00",
+                "count": [
+                    35
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "pilates crunch",
+                "start_time": "09:25:00",
+                "end_time": "10:10:00",
+                "count": [
+                    30
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "bdfe7f1db6861a87517abc8bb78e82a6",
+        "v_name": "watch?v=SyIdP5hIyOc",
+        "url": "https://www.youtube.com/watch?v=SyIdP5hIyOc",
+        "actions": [
+            {
+                "name": "knee in & out",
+                "start_time": "00:58:00",
+                "end_time": "01:28:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "climbers",
+                "start_time": "01:38:00",
+                "end_time": "02:08:00",
+                "count": [
+                    14
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "commando",
+                "start_time": "02:18:00",
+                "end_time": "02:48:00",
                 "count": [
                     6
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "leg raises",
+                "start_time": "02:58:00",
+                "end_time": "03:28:00",
+                "count": [
+                    10
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "straight leg sit ups",
+                "start_time": "03:38:00",
+                "end_time": "04:08:00",
+                "count": [
+                    6
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "deadbugs",
+                "start_time": "04:18:00",
+                "end_time": "04:48:00",
+                "count": [
+                    11
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "half jacks",
+                "start_time": "04:58:00",
+                "end_time": "05:28:00",
+                "count": [
+                    14
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "reverse crunches",
+                "start_time": "06:18:00",
+                "end_time": "06:48:00",
+                "count": [
+                    9
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "leg extensions",
+                "start_time": "06:58:00",
+                "end_time": "07:28:00",
+                "count": [
+                    9
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "cocoons",
+                "start_time": "07:38:00",
+                "end_time": "08:08:00",
+                "count": [
+                    9
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "heel taps",
+                "start_time": "08:59:00",
+                "end_time": "09:29:00",
+                "count": [
+                    14
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "simple bicycle",
+                "start_time": "09:39:00",
+                "end_time": "10:09:00",
+                "count": [
+                    22
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "ce0fbe3f4a9cc7a2eb95038274cded0c",
+        "v_name": "watch?v=k45xcoIBNN0",
+        "url": "https://www.youtube.com/watch?v=k45xcoIBNN0",
+        "actions": [
+            {
+                "name": "simple crunch",
+                "start_time": "00:21:00",
+                "end_time": "00:51:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "pull overs",
+                "start_time": "01:41:00",
+                "end_time": "02:11:00",
+                "count": [
+                    4
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "butterfly sit-ups",
+                "start_time": "02:21:00",
+                "end_time": "02:51:00",
+                "count": [
+                    7
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "lean back mat taps",
+                "start_time": "03:01:00",
+                "end_time": "03:31:00",
+                "count": [
+                    10
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "start crunch(R)",
+                "start_time": "03:41:00",
+                "end_time": "04:11:00",
+                "count": [
+                    9
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "start crunch(L)",
+                "start_time": "04:21:00",
+                "end_time": "04:51:00",
+                "count": [
+                    8
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "climbers",
+                "start_time": "05:01:00",
+                "end_time": "05:31:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "side plank knee in (L)",
+                "start_time": "06:21:00",
+                "end_time": "06:51:00",
+                "count": [
+                    8
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "side plank knee in (R)",
+                "start_time": "07:41:00",
+                "end_time": "08:11:00",
+                "count": [
+                    11
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "seated knee ins",
+                "start_time": "08:21:00",
+                "end_time": "08:51:00",
+                "count": [
+                    10
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "deadbugs",
+                "start_time": "09:01:00",
+                "end_time": "09:31:00",
+                "count": [
+                    10
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "7a0930998059e3f9dfd6f011fcf695fc",
+        "v_name": "watch?v=agvdkRc_img",
+        "url": "https://www.youtube.com/watch?v=agvdkRc_img",
+        "actions": [
+            {
+                "name": "high knee jacks",
+                "start_time": "00:10:00",
+                "end_time": "00:28:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "squat",
+                "start_time": "00:35:00",
+                "end_time": "01:10:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "back turns",
+                "start_time": "01:40:00",
+                "end_time": "02:05:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "tricep dip kicks",
+                "start_time": "02:40:00",
+                "end_time": "03:05:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "bridge",
+                "start_time": "03:40:00",
+                "end_time": "04:05:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "knee push ups",
+                "start_time": "04:40:00",
+                "end_time": "05:05:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "leg drops",
+                "start_time": "05:40:00",
+                "end_time": "06:35:00",
+                "count": [
+                    10
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "knee hugs",
+                "start_time": "07:15:00",
+                "end_time": "07:40:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "super mans",
+                "start_time": "08:20:00",
+                "end_time": "08:45:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "squat",
+                "start_time": "09:25:00",
+                "end_time": "09:57:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "side bends",
+                "start_time": "10:05:00",
+                "end_time": "10:30:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "87fe2aa41a32a24b219286aa44a1ef4f",
+        "v_name": "watch?v=N0kVcEj9bmM",
+        "url": "https://www.youtube.com/watch?v=N0kVcEj9bmM",
+        "actions": [
+            {
+                "name": "squat",
+                "start_time": "00:27:00",
+                "end_time": "01:00:00",
+                "count": [
+                    15
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "squat",
+                "start_time": "01:15:00",
+                "end_time": "01:43:00",
+                "count": [
+                    12
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "donkey kick",
+                "start_time": "02:00:00",
+                "end_time": "02:22:00",
+                "count": [
+                    20
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "donkey kick",
+                "start_time": "02:25:00",
+                "end_time": "02:45:00",
+                "count": [
+                    20
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "side leg raise",
+                "start_time": "03:05:00",
+                "end_time": "03:40:00",
+                "count": [
+                    16
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "reverse lunges",
+                "start_time": "04:04:00",
+                "end_time": "04:46:00",
+                "count": [
+                    20
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            },
+            {
+                "name": "squat",
+                "start_time": "05:15:00",
+                "end_time": "05:45:00",
+                "count": [
+                    15
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "9d5ebd384544529a26b172d596f59fbe",
+        "v_name": "watch?v=d7IRDv8cvYw",
+        "url": "https://www.youtube.com/watch?v=d7IRDv8cvYw",
+        "actions": [
+            {
+                "name": "bridge",
+                "start_time": "00:17:00",
+                "end_time": "01:57:00",
+                "count": [
+                    50
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "60093019108703a36bf5f46e675e0ac1",
+        "v_name": "watch?v=2XlhJlPOcPU",
+        "url": "https://www.youtube.com/watch?v=2XlhJlPOcPU",
+        "actions": [
+            {
+                "name": "donkey kicks",
+                "start_time": "00:20:00",
+                "end_time": "02:07:00",
+                "count": [
+                    50
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "c36fbdd341ace594e74bbb9cb632640b",
+        "v_name": "watch?v=I3a9I2GGvx8",
+        "url": "https://www.youtube.com/watch?v=I3a9I2GGvx8",
+        "actions": [
+            {
+                "name": "side leg raises",
+                "start_time": "00:20:00",
+                "end_time": "01:23:00",
+                "count": [
+                    20
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "04996acefa1c115258858d0260dfdabf",
+        "v_name": "watch?v=xrts0odDIJ4&list=PLndmDqg0p2P66-CPnbClnVjTwRFC-QmfI&index=6",
+        "url": "https://www.youtube.com/watch?v=xrts0odDIJ4&list=PLndmDqg0p2P66-CPnbClnVjTwRFC-QmfI&index=6",
+        "actions": [
+            {
+                "name": "reverse lunges challenge",
+                "start_time": "00:17:00",
+                "end_time": "02:03:00",
+                "count": [
+                    50
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "2628ac666193b423110df884c2e9cfab",
+        "v_name": "watch?v=tfqMxAhSfE8&list=PLndmDqg0p2P66-CPnbClnVjTwRFC-QmfI&index=7",
+        "url": "https://www.youtube.com/watch?v=tfqMxAhSfE8&list=PLndmDqg0p2P66-CPnbClnVjTwRFC-QmfI&index=7",
+        "actions": [
+            {
+                "name": "squats challenge ",
+                "start_time": "00:20:00",
+                "end_time": "02:02:00",
+                "count": [
+                    50
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "1ddb391d88f4a187a04388eb6b90e1f0",
+        "v_name": "watch?v=_vuwBnday18&list=PLndmDqg0p2P66-CPnbClnVjTwRFC-QmfI&index=8",
+        "url": "https://www.youtube.com/watch?v=_vuwBnday18&list=PLndmDqg0p2P66-CPnbClnVjTwRFC-QmfI&index=8",
+        "actions": [
+            {
+                "name": "fire hydrant challenge",
+                "start_time": "00:10:00",
+                "end_time": "02:01:00",
+                "count": [
+                    50
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "68ac8406bc8c22e677380757c871939e",
+        "v_name": "watch?v=tMY2X6Eq09s&list=PLndmDqg0p2P66-CPnbClnVjTwRFC-QmfI&index=9",
+        "url": "https://www.youtube.com/watch?v=tMY2X6Eq09s&list=PLndmDqg0p2P66-CPnbClnVjTwRFC-QmfI&index=9",
+        "actions": [
+            {
+                "name": "star jumps challenge",
+                "start_time": "00:25:00",
+                "end_time": "01:40:00",
+                "count": [
+                    50
+                ],
+                "fuzzy_action": false,
+                "complex_action": false
+            }
+        ]
+    },
+    {
+        "v_id": "64f0a0d9f91925d0318a029cd0aa962f",
+        "v_name": "watch?v=C8BBhPnjTHo&list=PLndmDqg0p2P66-CPnbClnVjTwRFC-QmfI&index=10",
+        "url": "https://www.youtube.com/watch?v=C8BBhPnjTHo&list=PLndmDqg0p2P66-CPnbClnVjTwRFC-QmfI&index=10",
+        "actions": [
+            {
+                "name": "plank jacks challenge",
+                "start_time": "00:18:00",
+                "end_time": "02:14:00",
+                "count": [
+                    100
                 ],
                 "fuzzy_action": false,
                 "complex_action": false

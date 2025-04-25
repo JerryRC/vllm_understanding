@@ -66,6 +66,10 @@ python download.py
 
 视频将下载到 `downloads/` 目录，每个视频有自己的子目录，以视频ID命名。
 
+*__该步骤仅会下载未存在的新文件夹，会跳过已存在的文件夹，但由于可能存在下载失败的情况，所以会根据 `force_download.txt` 文件中的文件夹ID强制覆盖已有的（人工判断为失效的）文件夹__*
+
+*__该步骤执行完毕后，命令行会输出新下载（包括强制覆盖）的文件夹ID，请手动保存至 `force_download.txt` 文件，便于后续：1. 重新下载失效视频；2. 用于下一步 clip 时增量处理视频__*
+
 ### 4. 处理视频
 
 ```bash
@@ -77,6 +81,8 @@ python clip.py
 - `first_cut`: 裁剪视频，保存到 `downloads/{video_id}/clips/` 
 - `second_slow`: 慢放处理，保存到 `downloads/{video_id}/slow/`
 - `third_extract`: 提取帧，保存到 `downloads/{video_id}/frames/`
+
+*__该步骤会根据 `force_download.txt` 文件中的文件夹ID，只处理列表中的视频，其他视频不会处理。若需要强制全文处理，则清空 `force_download.txt` 文件__*
 
 ### 5. 视频处理效果检查
 
