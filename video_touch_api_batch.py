@@ -27,6 +27,19 @@ except ImportError:
     print("OpenAI library not found. Please install using: pip install openai")
     exit(1)
 
+try:
+    import google.generativeai as genai
+except ImportError:
+    print("Google Generative AI library not found. Install with: pip install google-generativeai")
+    # Decide if you want to exit or continue (maybe Qwen is still usable)
+    # exit(1)
+
+try:
+    from dashscope import MultiModalConversation
+except ImportError:
+    print("Dashscope library not found. Install with: pip install dashscope")
+    # exit(1)
+
 # OpenCV no longer needed for Qwen
 # try:
 #     import cv2
@@ -42,7 +55,7 @@ except ImportError:
 #     exit(1)
 
 # --- Logging Setup ---
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - [%(processName)s] - %(message)s')
 logger = logging.getLogger(__name__)
 
 # 配置 API 密钥 and Client
@@ -77,37 +90,51 @@ client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
 def extract_movement_info(filename):
     # Extract movement name and side (if any)
-    movement_match = re.search(r'_(.*?)(?:\((L|R)\))?_', filename)
-    if movement_match:
-        movement = movement_match.group(1)
-        side = movement_match.group(2)
-        if side == 'L':
-            movement = f'left {movement}'
-        elif side == 'R':
-            movement = f'right {movement}'
+    match = re.match(r'\d+_(.*?)(?:_\((L|R)\))?_\[(.*)\].mp4', filename)
+    if match:
+        movement_name = match.group(1).strip().replace('_', ' ')
+        side = match.group(2)
+        ground_truth_str = match.group(3)
+        
+        if side:
+            movement_name = f"{side.lower()} {movement_name}"
+        
+        # Handle ground truth variations (e.g., "27-26-28" or "1")
+        if '-' in ground_truth_str:
+            # Take the first number if multiple are present
+            try:
+                ground_truth_num = int(ground_truth_str.split('-')[0])
+            except ValueError:
+                logger.warning(f"Could not parse first ground truth number in {filename}: {ground_truth_str}")
+                ground_truth_num = None
+        else:
+            try:
+                ground_truth_num = int(ground_truth_str)
+            except ValueError:
+                logger.warning(f"Could not parse ground truth number in {filename}: {ground_truth_str}")
+                ground_truth_num = None
+                
+        return movement_name, ground_truth_num
     else:
-        movement = None
-
-    # Extract ground truth numbers
-    ground_truth_match = re.search(r'\[(\d+(-\d+)*)\]', filename)
-    if ground_truth_match:
-        ground_truth = ground_truth_match.group(1)
-    else:
-        ground_truth = None
-
-    return movement, ground_truth
+        logger.warning(f"Could not parse movement/ground truth from filename: {filename}")
+        return None, None
 
 def extract_boxed_answer(text):
     """Extract the number from the \\boxed{} in the response"""
     if not text: return None
-    match = re.search(r'\\boxed\{(\d+)\}', text)
+    match = re.search(r'\\boxed\{(\d+(?:\.\d+)?)\}', text) # Allow float/int
     if match:
         try:
-            return int(match.group(1))
+            # Try converting to int first, then float if needed
+            val_str = match.group(1)
+            if '.' in val_str:
+                return float(val_str)
+            else:
+                return int(val_str)
         except ValueError:
-            logger.warning(f"Found \\boxed{{}}, but content was not an integer: {match.group(1)}")
+            logger.warning(f"Found \\boxed{{}}, but content was not a valid number: {match.group(1)}")
             return None
-    logger.warning(f"Could not find \\boxed{{...}} in response.")
+    logger.warning(f"Could not find \\boxed{{...}} in response: {text[:200]}...")
     return None
 
 # --- Abstract Base Class for Processors ---
@@ -115,7 +142,7 @@ def extract_boxed_answer(text):
 class VideoProcessor(ABC):
     def __init__(self, config):
         self.config = config
-        self.client = self._initialize_client()
+        self._initialize_client()
 
     @abstractmethod
     def _initialize_client(self):
@@ -126,107 +153,99 @@ class VideoProcessor(ABC):
         """Processes a single video and returns result data."""
         pass
 
-    def _get_common_result_data(self, video_path: str, movement: str, ground_truth: str):
-        """Helper to get common fields for the result dictionary."""
-        gt_number = None
-        if ground_truth:
-            parts = ground_truth.split('-')
-            try:
-                gt_number = int(parts[0])
-            except (ValueError, TypeError):
-                logger.warning(f"Could not convert ground truth '{ground_truth}' to a number for {video_path}")
-
+    def _get_common_result_data(self, video_path: str, movement: str, ground_truth_number: int, fps: int = None) -> dict:
+        """Creates the basic dictionary structure for a result."""
+        filename = os.path.basename(video_path)
         return {
-             "file": os.path.basename(video_path),
-             "video_path": video_path,
-             "movement": movement,
-             "ground_truth": ground_truth,
-             "ground_truth_number": gt_number,
-             "generated_response": None, # To be filled by specific processor
-             "predicted_count": None,    # To be filled by specific processor
-             "error": None               # To store potential errors
+            "file": filename,
+            "video_path": video_path,
+            "movement": movement,
+            "ground_truth_number": ground_truth_number,
+            "fps": fps, # Add fps here
+            "generated_response": None,
+            "predicted_count": None,
+            "error": None,
+            "model_name": None # Will be filled later
         }
 
 # --- Gemini Processor Implementation ---
 
 class GeminiProcessor(VideoProcessor):
     def _initialize_client(self):
-        logger.info("Initializing Gemini Client...")
-        api_key = os.environ.get("GEMINI_API_KEY")
-        if not api_key:
-            raise ValueError("GEMINI_API_KEY environment variable not set.")
-        return genai.Client(api_key=api_key)
+        # Configure the Gemini client
+        # Assuming API key is handled via environment variable GOOGLE_API_KEY
+        try:
+            if not os.getenv('GOOGLE_API_KEY'):
+                logger.warning("GOOGLE_API_KEY environment variable not set. Gemini API calls may fail.")
+            genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
+        except Exception as e:
+            logger.error(f"Failed to configure Gemini: {e}")
+            # Consider raising the exception or handling it based on desired behavior
 
     def process_single_video(self, video_path: str, movement: str, prompt_template: str) -> dict:
-        _, ground_truth = extract_movement_info(os.path.basename(video_path))
-        result = self._get_common_result_data(video_path, movement, ground_truth)
-        model_name = self.config.get('model_name', "gemini-1.5-flash-latest") # Default to 1.5 flash
-        result["model_name"] = model_name  # Add model name to result for tracking
+        model_name = self.config.get('model_name', 'gemini-1.5-flash-latest') # Default Gemini model
+        generation_config = self.config.get('generation_config', {})
+        _, ground_truth_number = extract_movement_info(os.path.basename(video_path))
+
+        result = self._get_common_result_data(video_path, movement, ground_truth_number)
+        result["model_name"] = model_name # Add model name specific to this processor call
 
         try:
-            # 1. Upload file
-            logger.info(f"[Gemini - {model_name}] Uploading file: {video_path}")
-            uploaded_file = self.client.files.upload(file=video_path)
-            logger.info(f"[Gemini - {model_name}] Uploaded file '{uploaded_file.display_name}' as: {uploaded_file.uri}")
+            logger.info(f"[Gemini - {model_name}] Processing video: {result['file']} for movement: '{movement}'")
 
-            # 2. Wait for processing
-            logger.info(f"[Gemini - {model_name}] Waiting for file processing...")
-            while uploaded_file.state.name == "PROCESSING":
-                print(".", end="", flush=True)
-                time.sleep(5) # Shorter sleep for Gemini
-                uploaded_file = self.client.files.get(name=uploaded_file.name)
+            # 1. Upload Video
+            logger.debug(f"[Gemini - {model_name}] Uploading video: {result['file']}...")
+            video_file = genai.upload_file(path=video_path)
+            logger.debug(f"[Gemini - {model_name}] Upload successful. Waiting for processing...")
 
-            if uploaded_file.state.name != "ACTIVE":
-                error_msg = f"[Gemini - {model_name}] File processing failed or did not complete: {uploaded_file.state.name} - {uploaded_file.uri}"
-                logger.error(error_msg)
-                result["error"] = error_msg
-                # Attempt to delete the failed file
-                try:
-                    self.client.files.delete(name=uploaded_file.name)
-                    logger.info(f"[Gemini - {model_name}] Deleted non-ACTIVE file: {uploaded_file.name}")
-                except Exception as delete_err:
-                    logger.warning(f"[Gemini - {model_name}] Failed to delete non-ACTIVE file {uploaded_file.name}: {delete_err}")
-                return result
-            print(" Done.")
-            logger.info(f"[Gemini - {model_name}] File processing complete.")
+            # 2. Poll for Video Processing Completion
+            while video_file.state.name == "PROCESSING":
+                time.sleep(10)
+                video_file = genai.get_file(video_file.name)
+                logger.debug(f"[Gemini - {model_name}] Video state: {video_file.state.name}")
 
-            # 3. Prepare Prompt & Config
-            prompt_text = prompt_template.format(movement=movement)
-            generation_config_dict = self.config.get('generation_config', {})
-            generation_config = google_types.GenerateContentConfig(**generation_config_dict)
+            if video_file.state.name == "FAILED":
+                raise ValueError("Video processing failed.")
+            elif video_file.state.name != "ACTIVE":
+                raise ValueError(f"Video is not active. State: {video_file.state.name}")
 
-            # 4. Generate Content
-            logger.info(f"[Gemini - {model_name}] Generating content for {result['file']}...")
-            response = self.client.models.generate_content(
-                model=model_name,
-                contents=[uploaded_file, prompt_text],
-                config=generation_config
-            )
+            logger.info(f"[Gemini - {model_name}] Video ready for model: {result['file']}")
 
-            # 5. Process Response
+            # 3. Prepare Prompt and Call Model
+            prompt = prompt_template.format(movement=movement)
+            model = genai.GenerativeModel(model_name)
+
+            logger.info(f"[Gemini - {model_name}] Sending prompt to model...")
+            response = model.generate_content([prompt, video_file], generation_config=generation_config, request_options={'timeout': 600})
+
+            # 4. Process Response
             generated_text = response.text
             logger.info(f"[Gemini - {model_name}] Response received for {result['file']}. Summary: {generated_text[:100]}...")
             result["generated_response"] = generated_text
             result["predicted_count"] = extract_boxed_answer(generated_text)
 
-            # 6. Delete uploaded file (optional, but good practice)
+            # Clean up uploaded file
             try:
-                self.client.files.delete(name=uploaded_file.name)
-                logger.info(f"[Gemini - {model_name}] Deleted processed file: {uploaded_file.name}")
+                genai.delete_file(video_file.name)
+                logger.debug(f"[Gemini - {model_name}] Deleted uploaded file: {video_file.name}")
             except Exception as delete_err:
-                logger.warning(f"[Gemini - {model_name}] Failed to delete processed file {uploaded_file.name}: {delete_err}")
+                logger.warning(f"[Gemini - {model_name}] Failed to delete uploaded file {video_file.name}: {delete_err}")
 
+        except FileNotFoundError:
+            error_msg = f"[Gemini - {model_name}] Video file not found: {video_path}"
+            logger.error(error_msg)
+            result["error"] = error_msg
         except Exception as e:
             error_msg = f"[Gemini - {model_name}] Error processing {video_path}: {str(e)}"
             logger.exception(error_msg) # Log full traceback
             result["error"] = error_msg
-            # Ensure file is deleted if it exists and failed mid-process
-            if 'uploaded_file' in locals() and hasattr(uploaded_file, 'name'):
-                 try:
-                    self.client.files.delete(name=uploaded_file.name)
-                    logger.info(f"[Gemini - {model_name}] Deleted file after error: {uploaded_file.name}")
-                 except Exception as delete_err:
-                     logger.warning(f"[Gemini - {model_name}] Failed to delete file {uploaded_file.name} after error: {delete_err}")
+            # Attempt to clean up if video_file was created
+            if 'video_file' in locals() and hasattr(video_file, 'name'):
+                try:
+                    genai.delete_file(video_file.name)
+                    logger.debug(f"[Gemini - {model_name}] Deleted uploaded file on error: {video_file.name}")
+                except Exception as delete_err:
+                    logger.warning(f"[Gemini - {model_name}] Failed to delete file {video_file.name} on error: {delete_err}")
 
         return result
 
@@ -234,87 +253,144 @@ class GeminiProcessor(VideoProcessor):
 
 class QwenProcessor(VideoProcessor):
     def _initialize_client(self):
-        logger.info("Initializing Qwen OpenAI **Synchronous** Client...")
-        api_key = self.config.get("qwen_api_key", "EMPTY")
-        base_url = self.config.get("qwen_api_url")
-        if not base_url:
-            raise ValueError("Qwen API URL (--qwen_api_url) must be provided.")
-        # Use the synchronous client
-        return OpenAI(api_key=api_key, base_url=base_url)
+        # Check for Dashscope API Key
+        self.api_key = self.config.get('qwen_api_key')
+        if not self.api_key or self.api_key == "EMPTY":
+            self.api_key = os.getenv("DASHSCOPE_API_KEY")
+            if not self.api_key:
+                logger.error("Qwen API Key not provided in config or DASHSCOPE_API_KEY env var.")
+                # Decide whether to raise error or allow proceeding (will fail later)
+                # raise ValueError("Missing Qwen API Key")
+        
+        # No explicit client object needed for dashscope library calls
+        pass
 
     def process_single_video(self, video_path: str, movement: str, prompt_template: str) -> dict:
-         _, ground_truth = extract_movement_info(os.path.basename(video_path))
-         result = self._get_common_result_data(video_path, movement, ground_truth)
-         
-         # Ensure model_name is never None - FIXED BUG HERE
-         model_name = self.config.get('model_name')
-         if not model_name:
-             model_name = "Qwen2.5-VL-7B-Instruct" # Default model if none specified
-             logger.info(f"No model name provided, using default: {model_name}")
-             
-         result["model_name"] = model_name  # Add model name to result for tracking
-         generation_config_dict = self.config.get('generation_config', {})
+        model_name = self.config.get('model_name', 'qwen-vl-plus') # Default Qwen model
+        fps = self.config.get('qwen_fps', 2) # Get FPS from config
+        _, ground_truth_number = extract_movement_info(os.path.basename(video_path))
+        
+        # Pass FPS to common data function
+        result = self._get_common_result_data(video_path, movement, ground_truth_number, fps=fps)
+        result["model_name"] = model_name # Add model name specific to this processor call
+        
+        # Ensure API key is set (checked in init, but double-check)
+        if not self.api_key:
+            result["error"] = f"[Qwen - {model_name}] Missing API Key."
+            logger.error(result["error"])
+            return result
+            
+        try:
+            logger.info(f"[Qwen - {model_name} - FPS {fps}] Processing video: {result['file']} for movement: '{movement}'")
 
-         try:
-             # 1. Read and Encode Full Video
-             logger.info(f"[Qwen - {model_name}] Reading and encoding video file: {video_path}")
-             with open(video_path, "rb") as video_file:
-                 video_bytes = video_file.read()
-             base64_video = base64.b64encode(video_bytes).decode('utf-8')
-             video_data_url = f"data:video/mp4;base64,{base64_video}"
-             logger.info(f"[Qwen - {model_name}] Video encoded to data URL (length: {len(video_data_url)} chars).")
+            # 1. Get absolute path for file URI
+            if not os.path.exists(video_path):
+                raise FileNotFoundError(f"Video file does not exist: {video_path}")
+            absolute_video_path = os.path.abspath(video_path)
+            video_uri = f"file://{absolute_video_path}"
+            logger.debug(f"[Qwen - {model_name}] Using video URI: {video_uri}")
 
-             # 2. Prepare Prompt & Messages (OpenAI format)
-             prompt_text = prompt_template.format(movement=movement)
-             messages = [
-                 {"role": "user", "content": [
-                     # Send the video data URL
-                     {"type": "video_url", "video_url": {"url": video_data_url}},
-                     # Add text prompt last
-                     {"type": "text", "text": prompt_text}
-                 ]}
-             ]
+            # 2. Prepare Prompt and Messages for Dashscope
+            prompt = prompt_template.format(movement=movement)
+            messages = [
+                {'role': 'system', 'content': [{'text': 'You are a helpful assistant specialized in analyzing videos to count actions.'}]},
+                {'role': 'user', 'content': [
+                    {'video': video_uri, "fps": fps},
+                    {'text': prompt}
+                ]}
+            ]
 
-             # 3. Generate Content (Synchronous Call)
-             logger.info(f"[Qwen - {model_name}] Generating content for {result['file']}...")
-             api_params = {
-                 "temperature": generation_config_dict.get("temperature", 0),
-                 "top_p": generation_config_dict.get("top_p", 1.0),
-                 "max_tokens": generation_config_dict.get("max_output_tokens", 8192),
-             }
-             api_params = {k: v for k, v in api_params.items() if v is not None}
+            # 3. Call Dashscope API
+            logger.info(f"[Qwen - {model_name}] Sending request to Dashscope API...")
+            start_time = time.time()
+            response = MultiModalConversation.call(
+                api_key=self.api_key,
+                model=model_name,
+                messages=messages
+                # Add other parameters like temperature if needed, check dashscope docs
+            )
+            end_time = time.time()
+            logger.info(f"[Qwen - {model_name}] Call completed in {end_time - start_time:.2f} seconds. Status: {response.status_code}")
 
-             # Direct synchronous call - double check model is not None
-             logger.info(f"[Qwen] Making API call with model={model_name}")
-             response = self.client.chat.completions.create(
-                 model=model_name,  # This should now never be None
-                 messages=messages,
-                 **api_params
-             )
-             generated_text = response.choices[0].message.content
+            # 4. Process Response
+            if response.status_code == 200:
+                generated_text = response["output"]["choices"][0]["message"]["content"][0]["text"]
+                logger.info(f"[Qwen - {model_name}] Response received for {result['file']}. Summary: {generated_text[:100]}...")
+                result["generated_response"] = generated_text
+                result["predicted_count"] = extract_boxed_answer(generated_text)
+            else:
+                # Handle API errors gracefully
+                error_code = response.get("code", "N/A")
+                error_msg_api = response.get("message", "Unknown API Error")
+                error_msg = f"[Qwen - {model_name}] Dashscope API Error (Status: {response.status_code}, Code: {error_code}): {error_msg_api}"
+                logger.error(f"{error_msg} (Request ID: {response.get('request_id', 'N/A')})")
+                result["error"] = error_msg
 
-             # 4. Process Response
-             logger.info(f"[Qwen - {model_name}] Response received for {result['file']}. Summary: {generated_text[:100]}...")
-             result["generated_response"] = generated_text
-             result["predicted_count"] = extract_boxed_answer(generated_text)
-
-         except FileNotFoundError:
-             error_msg = f"[Qwen - {model_name}] Video file not found: {video_path}"
-             logger.error(error_msg)
-             result["error"] = error_msg
-         except Exception as e:
-            error_msg = f"[Qwen - {model_name}] Error processing {video_path}: {str(e)}"
-            logger.exception(error_msg)
+        except FileNotFoundError as fnf_err:
+            error_msg = f"[Qwen - {model_name}] Video file not found during processing: {str(fnf_err)}"
+            logger.error(error_msg)
+            result["error"] = error_msg
+        except Exception as e:
+            error_msg = f"[Qwen - {model_name}] Unhandled error processing {video_path}: {str(e)}"
+            logger.exception(error_msg) # Log full traceback
             result["error"] = error_msg
 
-         return result
+        return result
 
 
 # --- Multiprocessing Worker ---
 
+def check_existing_results(video_path, model_name, service, fps, results_file):
+    """
+    Check if a video has already been successfully processed with the correct FPS for Qwen.
+    
+    Args:
+        video_path: Path to the video file
+        model_name: Name of the model
+        service: Name of the service ('gemini' or 'qwen')
+        fps: FPS value used (relevant for Qwen)
+        results_file: Path to the all_results.jsonl file
+        
+    Returns:
+        dict: Existing result if found and valid, None otherwise
+    """
+    if not os.path.exists(results_file):
+        return None
+        
+    try:
+        with open(results_file, 'r') as f:
+            for line in f:
+                try:
+                    result = json.loads(line)
+                    # Basic checks for matching video and model
+                    if (result.get('video_path') != video_path or 
+                            result.get('model_name') != model_name):
+                        continue
+                    
+                    # Qwen specific FPS check
+                    if service == 'qwen' and result.get('fps') != fps:
+                        continue # Found result for same video/model but wrong FPS
+                        
+                    # Check if the result was successful
+                    if (result.get('generated_response') is not None and
+                        result.get('predicted_count') is not None and
+                        result.get('error') is None): # Explicitly check for no error
+                        
+                        fps_log = f" (FPS: {result.get('fps', 'N/A')})" if service == 'qwen' else ""
+                        logger.info(f"Found existing valid result for {os.path.basename(video_path)}{fps_log}")
+                        return result
+                        
+                except json.JSONDecodeError:
+                    logger.warning(f"Skipping malformed JSON line in {results_file}: {line.strip()}")
+                    continue
+    except Exception as e:
+        logger.error(f"Error reading existing results file {results_file}: {e}")
+    
+    return None
+
 def worker_function(args):
     """Top-level function for multiprocessing pool."""
-    processor_config, service, video_path, prompt_template = args
+    processor_config, service, video_path, prompt_template, output_dir = args
     try:
         # Create processor instance in the worker process to avoid pickling issues
         if service == 'gemini':
@@ -326,10 +402,21 @@ def worker_function(args):
             
         # Extract movement here to pass to processor
         file = os.path.basename(video_path)
-        movement, _ = extract_movement_info(file)
+        movement, ground_truth = extract_movement_info(file)
         if not movement:
             logger.warning(f"Could not extract movement from filename: {file}. Skipping.")
             return None
+
+        model_name = processor_config.get('model_name', service)
+        qwen_fps = processor_config.get('qwen_fps') if service == 'qwen' else None
+        model_folder_name = get_model_folder_name(model_name, service, qwen_fps)
+        results_file = os.path.join(output_dir, model_folder_name, "all_results.jsonl")
+        
+        # Check if we have already successfully processed this video (passing service and fps)
+        existing_result = check_existing_results(video_path, model_name, service, qwen_fps, results_file)
+        if existing_result:
+            return existing_result
+
         return processor.process_single_video(video_path, movement, prompt_template)
     except Exception as e:
         logger.error(f"Unhandled exception in worker for {video_path}: {e}", exc_info=True)
@@ -373,13 +460,18 @@ def calculate_metrics(results):
     }
 
 # --- Get model-specific folder name ---
-def get_model_folder_name(model_name):
-    """Convert model name to a safe folder name."""
+def get_model_folder_name(model_name, service=None, fps=None):
+    """Convert model name to a safe folder name, optionally appending FPS for Qwen."""
     if not model_name:
-        return "default_model"
-    # Replace problematic characters with underscore
-    safe_name = re.sub(r'[^\w\-\.]', '_', model_name)
-    return safe_name
+        base_name = "default_model"
+    else:
+        # Replace problematic characters with underscore
+        base_name = re.sub(r'[^\w\-\.]', '_', model_name)
+    
+    if service == 'qwen' and fps is not None:
+        return f"{base_name}-fps{fps}"
+    else:
+        return base_name
 
 # --- Main Execution ---
 
@@ -391,6 +483,7 @@ def main():
     parser.add_argument("--model_name", type=str, default=None, help="Model name to use (optional, defaults vary by service). Example: gemini-1.5-flash-latest or qwen-vl-plus")
     parser.add_argument("--qwen_api_url", type=str, default="https://dashscope.aliyuncs.com/compatible-mode/v1", help="Base URL for Qwen OpenAI-compatible API (required if service is qwen).")
     parser.add_argument("--qwen_api_key", type=str, default=os.environ.get("DASHSCOPE_API_KEY", "EMPTY"), help="API key for Qwen service.")
+    parser.add_argument("--qwen_fps", type=int, default=2, help="Frames per second for Qwen video processing.")
     parser.add_argument("--pool_size", type=int, default=None, help="Number of worker processes (defaults to cpu_count // 2).")
     parser.add_argument("--temperature", type=float, default=0.0, help="Sampling temperature.")
     parser.add_argument("--top_p", type=float, default=1, help="Top-p probability mass.")
@@ -402,7 +495,7 @@ def main():
     os.makedirs(args.output_dir, exist_ok=True)
 
     # Create model-specific subfolder
-    model_folder_name = get_model_folder_name(args.model_name)
+    model_folder_name = get_model_folder_name(args.model_name, args.service, args.qwen_fps)
     model_output_dir = os.path.join(args.output_dir, model_folder_name)
     os.makedirs(model_output_dir, exist_ok=True)
     logger.info(f"Results will be saved to model-specific folder: {model_output_dir}")
@@ -419,6 +512,7 @@ def main():
         "generation_config": generation_config,
         "qwen_api_url": args.qwen_api_url,
         "qwen_api_key": args.qwen_api_key,
+        "qwen_fps": args.qwen_fps,
     }
 
     # --- Prepare Video List and Arguments ---
@@ -442,7 +536,7 @@ def main():
     prompt_template = "This is a video of a video blogger performing the {movement} movement. Please count how many {movement} movements the blogger has completed in total. Note that the blogger's movement frequency may not remain constant, so please count each movement carefully one by one. Analyze the video frame by frame and provide the reasoning behind your answer. Please reason step by step, and put your final answer within \\boxed{{}}"
 
     # Pass configuration rather than processor instance to avoid pickling errors
-    worker_args_list = [(processor_config, args.service, video_path, prompt_template) for video_path in all_video_files]
+    worker_args_list = [(processor_config, args.service, video_path, prompt_template, args.output_dir) for video_path in all_video_files]
 
     # --- Run Multiprocessing ---
     all_results = []

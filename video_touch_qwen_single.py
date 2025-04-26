@@ -1,7 +1,6 @@
 import os
 import time
 import re
-import base64
 import logging
 import os
 
@@ -9,19 +8,18 @@ import os
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Import OpenAI client for Qwen API
+# Import Dashscope library
 try:
-    from openai import OpenAI
+    from dashscope import MultiModalConversation
 except ImportError:
-    print("OpenAI library not found. Please install using: pip install openai")
+    print("Dashscope library not found. Please install using: pip install dashscope")
     exit(1)
 
-# Qwen API endpoint
-QWEN_API_URL = "https://f500-129-80-126-97.ngrok-free.app/v1"
-QWEN_API_KEY = "EMPTY"  # Qwen doesn't require a real API key with ngrok setup
-
-QWEN_API_KEY= os.getenv("DASHSCOPE_API_KEY")
-QWEN_API_URL= "https://dashscope.aliyuncs.com/compatible-mode/v1"
+# Use Dashscope API Key from environment variable
+DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY")
+if not DASHSCOPE_API_KEY:
+    logger.error("DASHSCOPE_API_KEY environment variable not set.")
+    exit(1)
 
 # Function to extract boxed answer from response
 def extract_boxed_answer(text):
@@ -38,73 +36,66 @@ def extract_boxed_answer(text):
     return None
 
 # Specify the video to test
-video_path = "downloads/7a184635bb8578128a14c25954e0a873/clips/0412_circle + knee tuck_[8].mp4"
-if not os.path.exists(video_path):
-    logger.error(f"Video file not found: {video_path}")
+local_video_path = "downloads/89e845984028a7ed30dfded20c0c00cb/clips/0341_lift curl(R)_[6].mp4"
+if not os.path.exists(local_video_path):
+    logger.error(f"Video file not found: {local_video_path}")
     exit(1)
 
-# Initialize OpenAI client with Qwen endpoint
-logger.info(f"Initializing OpenAI client with Qwen API URL: {QWEN_API_URL}")
-client = OpenAI(api_key=QWEN_API_KEY, base_url=QWEN_API_URL)
-
-# Read and encode video file
-logger.info(f"Reading and encoding video file: {video_path}")
-try:
-    with open(video_path, "rb") as video_file:
-        video_bytes = video_file.read()
-    base64_video = base64.b64encode(video_bytes).decode('utf-8')
-    video_data_url = f"data:video/mp4;base64,{base64_video}"
-except Exception as e:
-    logger.error(f"Error reading video: {str(e)}")
-    exit(1)
+# Get absolute path for the file URI
+absolute_video_path = os.path.abspath(local_video_path)
+video_uri = f"file://{absolute_video_path}"
+logger.info(f"Using video file URI: {video_uri}")
 
 # Prepare prompt
-movement = "side stretch"
+movement = "circle + knee tuck" # Updated based on the video path
 prompt_text = f"This is a video of a video blogger performing the {movement} movement. Please count how many {movement} movements the blogger has completed in total. Note that the blogger's movement frequency may not remain constant, so please count each movement carefully one by one. Analyze the video frame by frame and provide the reasoning behind your answer. Please reason step by step, and put your final answer within \\boxed{{}}"
 
-# Prepare messages in OpenAI format
+# Prepare messages in Dashscope format
 messages = [
-    {"role": "user", "content": [
-        # Send the video data URL
-        {"type": "video_url", "video_url": {"url": video_data_url}, 'fps': 20.0},
-        # Add text prompt last
-        {"type": "text", "text": prompt_text}
+    {'role': 'system', 'content': [{'text': 'You are a helpful assistant specialized in analyzing videos to count actions.'}]},
+    {'role': 'user', 'content': [
+        # Send the video file URI
+        {'video': video_uri, "fps": 2},
+        # Add text prompt
+        {'text': prompt_text}
     ]}
 ]
 
-# Generation parameters
-model_name = "qwen2.5-vl-32b-instruct"  # Use the Qwen model name
-generation_params = {
-    "temperature": 0.0,
-    "top_p": 0.95, 
-    "max_tokens": 8192,
-}
+# Model name
+model_name = "qwen2.5-vl-3b-instruct" # Use the specific Qwen model
 
-# Call the Qwen API
-logger.info(f"Calling Qwen API with model: {model_name}")
+# Call the Dashscope API
+logger.info(f"Calling Dashscope API with model: {model_name}")
 try:
     start_time = time.time()
-    response = client.chat.completions.create(
+    response = MultiModalConversation.call(
+        api_key=DASHSCOPE_API_KEY,
         model=model_name,
-        messages=messages,
-        **generation_params
+        messages=messages
     )
     end_time = time.time()
-    
-    # Get the response text
-    generated_text = response.choices[0].message.content
-    
-    # Extract the predicted count
-    predicted_count = extract_boxed_answer(generated_text)
-    
-    # Print results
-    print("\n" + "="*50)
-    print(f"RESPONSE (took {end_time - start_time:.2f} seconds):")
-    print("="*50)
-    print(generated_text)
-    print("\n" + "="*50)
-    print(f"Predicted count: {predicted_count}")
-    print("="*50)
-    
+    print(response)
+    # Check response status
+    if response.status_code == 200:
+        # Get the response text
+        generated_text = response["output"]["choices"][0]["message"]["content"][0]["text"]
+
+        # Extract the predicted count
+        predicted_count = extract_boxed_answer(generated_text)
+
+        # Print results
+        print("\n" + "="*50)
+        print(f"RESPONSE (took {end_time - start_time:.2f} seconds):")
+        print("="*50)
+        print(generated_text)
+        print("\n" + "="*50)
+        print(f"Predicted count: {predicted_count}")
+        print("="*50)
+    else:
+        logger.error(f"Dashscope API call failed with status code {response.status_code}")
+        logger.error(f"Request ID: {response.request_id}")
+        logger.error(f"Error Code: {response.code}")
+        logger.error(f"Error Message: {response.message}")
+
 except Exception as e:
-    logger.error(f"Error calling Qwen API: {str(e)}", exc_info=True) 
+    logger.error(f"Error calling Dashscope API: {str(e)}", exc_info=True) 

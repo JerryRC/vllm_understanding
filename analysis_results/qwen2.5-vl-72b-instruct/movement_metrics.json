@@ -1,0 +1,437 @@
+{
+  " Russian Twist": {
+    "mae": 19.0,
+    "num_samples": 1,
+    "rmse": 19.0
+  },
+  "1-leg pam knife": {
+    "mae": 7.0,
+    "num_samples": 1,
+    "rmse": 7.0
+  },
+  "1-leg pull over": {
+    "mae": 5.0,
+    "num_samples": 1,
+    "rmse": 5.0
+  },
+  "100": {
+    "mae": 60.0,
+    "num_samples": 1,
+    "rmse": 60.0
+  },
+  "5 pluses, 3 long": {
+    "mae": 1.0,
+    "num_samples": 1,
+    "rmse": 1.0
+  },
+  "5 pulses, 3 long": {
+    "mae": 1.0,
+    "num_samples": 1,
+    "rmse": 1.0
+  },
+  "AB HOLD": {
+    "mae": 0.0,
+    "num_samples": 1,
+    "rmse": 0.0
+  },
+  "Bicycle crunch": {
+    "mae": 1.0,
+    "num_samples": 1,
+    "rmse": 1.0
+  },
+  "Hip Lift": {
+    "mae": 17.0,
+    "num_samples": 1,
+    "rmse": 17.0
+  },
+  "Toe touches": {
+    "mae": 4.0,
+    "num_samples": 1,
+    "rmse": 4.0
+  },
+  "ankle pumps": {
+    "mae": 3.0,
+    "num_samples": 2,
+    "rmse": 3.0
+  },
+  "bicycle crunch": {
+    "mae": 21.0,
+    "num_samples": 1,
+    "rmse": 21.0
+  },
+  "burpees": {
+    "mae": 7.0,
+    "num_samples": 1,
+    "rmse": 7.0
+  },
+  "butterfly kick outs": {
+    "mae": 6.0,
+    "num_samples": 1,
+    "rmse": 6.0
+  },
+  "butterfly lift": {
+    "mae": 17.0,
+    "num_samples": 1,
+    "rmse": 17.0
+  },
+  "cat cow": {
+    "mae": 0.0,
+    "num_samples": 1,
+    "rmse": 0.0
+  },
+  "circle + knee tuck": {
+    "mae": 2.5,
+    "num_samples": 2,
+    "rmse": 2.5495097567963922
+  },
+  "clamshell + pointe": {
+    "mae": 4.0,
+    "num_samples": 2,
+    "rmse": 4.47213595499958
+  },
+  "crossbody mountain climber": {
+    "mae": 30.0,
+    "num_samples": 1,
+    "rmse": 30.0
+  },
+  "crunch": {
+    "mae": 2.0,
+    "num_samples": 1,
+    "rmse": 2.0
+  },
+  "crunch + leg lift": {
+    "mae": 3.0,
+    "num_samples": 1,
+    "rmse": 3.0
+  },
+  "crunch left": {
+    "mae": 10.0,
+    "num_samples": 1,
+    "rmse": 10.0
+  },
+  "crunch middle": {
+    "mae": 5.0,
+    "num_samples": 1,
+    "rmse": 5.0
+  },
+  "crunch right": {
+    "mae": 9.0,
+    "num_samples": 1,
+    "rmse": 9.0
+  },
+  "draw circles": {
+    "mae": 6.0,
+    "num_samples": 1,
+    "rmse": 6.0
+  },
+  "extend + flex": {
+    "mae": 2.0,
+    "num_samples": 1,
+    "rmse": 2.0
+  },
+  "extend +flex": {
+    "mae": 4.0,
+    "num_samples": 1,
+    "rmse": 4.0
+  },
+  "flex + lift": {
+    "mae": 6.0,
+    "num_samples": 1,
+    "rmse": 6.0
+  },
+  "flex +lift": {
+    "mae": 2.0,
+    "num_samples": 1,
+    "rmse": 2.0
+  },
+  "floor taps + extend": {
+    "mae": 3.0,
+    "num_samples": 1,
+    "rmse": 3.0
+  },
+  "halfmoon": {
+    "mae": 17.5,
+    "num_samples": 2,
+    "rmse": 17.507141400011598
+  },
+  "heel tap": {
+    "mae": 18.0,
+    "num_samples": 1,
+    "rmse": 18.0
+  },
+  "heel touches": {
+    "mae": 9.0,
+    "num_samples": 1,
+    "rmse": 9.0
+  },
+  "high plank to low plank": {
+    "mae": 5.0,
+    "num_samples": 1,
+    "rmse": 5.0
+  },
+  "in&out straight away": {
+    "mae": 7.0,
+    "num_samples": 1,
+    "rmse": 7.0
+  },
+  "inner thigh circles": {
+    "mae": 16.5,
+    "num_samples": 2,
+    "rmse": 16.688319268278637
+  },
+  "inner thigh lift": {
+    "mae": 12.5,
+    "num_samples": 2,
+    "rmse": 12.747548783981962
+  },
+  "inner thigh pushback": {
+    "mae": 4.5,
+    "num_samples": 2,
+    "rmse": 5.1478150704935
+  },
+  "jump squats side to side": {
+    "mae": 1.0,
+    "num_samples": 1,
+    "rmse": 1.0
+  },
+  "jumping jacks": {
+    "mae": 32.0,
+    "num_samples": 1,
+    "rmse": 32.0
+  },
+  "kick front + up": {
+    "mae": 1.0,
+    "num_samples": 1,
+    "rmse": 1.0
+  },
+  "knee circles": {
+    "mae": 10.0,
+    "num_samples": 1,
+    "rmse": 10.0
+  },
+  "left bow crunch": {
+    "mae": 1.0,
+    "num_samples": 1,
+    "rmse": 1.0
+  },
+  "left half plank crunch": {
+    "mae": 5.0,
+    "num_samples": 1,
+    "rmse": 5.0
+  },
+  "left lateral swipe": {
+    "mae": 1.0,
+    "num_samples": 1,
+    "rmse": 1.0
+  },
+  "left leg activation": {
+    "mae": 1.0,
+    "num_samples": 1,
+    "rmse": 1.0
+  },
+  "left sigle leg bridge": {
+    "mae": 9.0,
+    "num_samples": 1,
+    "rmse": 9.0
+  },
+  "leg circles": {
+    "mae": 3.5,
+    "num_samples": 2,
+    "rmse": 3.5355339059327378
+  },
+  "leg raise clap": {
+    "mae": 2.0,
+    "num_samples": 1,
+    "rmse": 2.0
+  },
+  "lifted crunch": {
+    "mae": 2.0,
+    "num_samples": 1,
+    "rmse": 2.0
+  },
+  "lower leg slide": {
+    "mae": 7.0,
+    "num_samples": 2,
+    "rmse": 7.0710678118654755
+  },
+  "mountain cliber + hold": {
+    "mae": 1.0,
+    "num_samples": 1,
+    "rmse": 1.0
+  },
+  "pelvic tilt + 1-knee lifts": {
+    "mae": 9.0,
+    "num_samples": 1,
+    "rmse": 9.0
+  },
+  "pelvic tilt + knee lifts": {
+    "mae": 7.0,
+    "num_samples": 1,
+    "rmse": 7.0
+  },
+  "plank": {
+    "mae": 0.0,
+    "num_samples": 1,
+    "rmse": 0.0
+  },
+  "plank + lower AB crunch": {
+    "mae": 1.0,
+    "num_samples": 1,
+    "rmse": 1.0
+  },
+  "plank jacks": {
+    "mae": 15.0,
+    "num_samples": 1,
+    "rmse": 15.0
+  },
+  "plank with hip dips": {
+    "mae": 17.0,
+    "num_samples": 1,
+    "rmse": 17.0
+  },
+  "pull over + toe touch": {
+    "mae": 5.0,
+    "num_samples": 1,
+    "rmse": 5.0
+  },
+  "pull over +toe touch": {
+    "mae": 3.0,
+    "num_samples": 1,
+    "rmse": 3.0
+  },
+  "push ups side to side": {
+    "mae": 36.0,
+    "num_samples": 1,
+    "rmse": 36.0
+  },
+  "pyramid lift": {
+    "mae": 6.0,
+    "num_samples": 2,
+    "rmse": 6.324555320336759
+  },
+  "reverse crunch": {
+    "mae": 2.0,
+    "num_samples": 1,
+    "rmse": 2.0
+  },
+  "reverse crunch leg extension": {
+    "mae": 2.0,
+    "num_samples": 1,
+    "rmse": 2.0
+  },
+  "reverse plank lift": {
+    "mae": 18.0,
+    "num_samples": 1,
+    "rmse": 18.0
+  },
+  "right bridge +floor taps": {
+    "mae": 3.0,
+    "num_samples": 1,
+    "rmse": 3.0
+  },
+  "right half plank crunch": {
+    "mae": 0.0,
+    "num_samples": 1,
+    "rmse": 0.0
+  },
+  "right lateral swipe": {
+    "mae": 3.0,
+    "num_samples": 1,
+    "rmse": 3.0
+  },
+  "right leg activation": {
+    "mae": 1.0,
+    "num_samples": 1,
+    "rmse": 1.0
+  },
+  "right sigle leg bridge": {
+    "mae": 4.0,
+    "num_samples": 1,
+    "rmse": 4.0
+  },
+  "russian twist": {
+    "mae": 17.0,
+    "num_samples": 1,
+    "rmse": 17.0
+  },
+  "scissor kicks": {
+    "mae": 37.0,
+    "num_samples": 1,
+    "rmse": 37.0
+  },
+  "shift left-right": {
+    "mae": 7.0,
+    "num_samples": 2,
+    "rmse": 7.0
+  },
+  "side + back lift": {
+    "mae": 7.0,
+    "num_samples": 1,
+    "rmse": 7.0
+  },
+  "side +back lift": {
+    "mae": 4.0,
+    "num_samples": 1,
+    "rmse": 4.0
+  },
+  "side pyramid lift": {
+    "mae": 5.0,
+    "num_samples": 2,
+    "rmse": 5.385164807134504
+  },
+  "sideways lift": {
+    "mae": 12.0,
+    "num_samples": 2,
+    "rmse": 12.0
+  },
+  "sitting lift": {
+    "mae": 12.5,
+    "num_samples": 2,
+    "rmse": 12.589678312014172
+  },
+  "slow mountain climber": {
+    "mae": 13.0,
+    "num_samples": 1,
+    "rmse": 13.0
+  },
+  "spider plank": {
+    "mae": 2.0,
+    "num_samples": 1,
+    "rmse": 2.0
+  },
+  "spider-man plank": {
+    "mae": 7.0,
+    "num_samples": 1,
+    "rmse": 7.0
+  },
+  "sqieeze it in": {
+    "mae": 3.0,
+    "num_samples": 1,
+    "rmse": 3.0
+  },
+  "straight leg crunch": {
+    "mae": 2.0,
+    "num_samples": 1,
+    "rmse": 2.0
+  },
+  "switching lunges": {
+    "mae": 9.0,
+    "num_samples": 1,
+    "rmse": 9.0
+  },
+  "tap to upper leg": {
+    "mae": 14.5,
+    "num_samples": 2,
+    "rmse": 14.713938969562161
+  },
+  "thigh combo": {
+    "mae": 18.5,
+    "num_samples": 2,
+    "rmse": 18.828170383762732
+  },
+  "up&down plank": {
+    "mae": 0.5,
+    "num_samples": 2,
+    "rmse": 0.7071067811865476
+  }
+}
