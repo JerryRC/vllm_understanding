@@ -3,3 +3,6 @@ output-all
 **/__pycache__
 RepCountDataset
 downloads_repcount
+quvadataset
+downloads_quva
+LLSP_form

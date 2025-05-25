@@ -197,19 +197,21 @@ def third_extract(download_dir, folder_list=None):
 # 主函数
 def main():
     # 下载目录
-    download_dir = "downloads"
+    # download_dir = "downloads"
+    download_dir = "downloads_repcount"
     
     # 读取要处理的文件夹列表
     force_download_file = "force_download.txt"
     folder_list = read_folder_list(force_download_file)
+    folder_list = []
     
     if folder_list:
         print(f"将只处理以下{len(folder_list)}个文件夹: {', '.join(folder_list)}")
     else:
         print("未指定处理文件列表，将处理所有文件夹")
     
-    first_cut(download_dir, folder_list)
-    second_slow(download_dir, folder_list)
+    # first_cut(download_dir, folder_list)
+    # second_slow(download_dir, folder_list)
     third_extract(download_dir, folder_list)
 
 
