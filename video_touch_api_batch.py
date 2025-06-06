@@ -59,7 +59,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - [%
 logger = logging.getLogger(__name__)
 
 # 配置 API 密钥 and Client
-# genai.configure(api_key=os.environ["GEMINI_API_KEY"]) # Configure is deprecated with Client
+# No need to configure the old way anymore
 client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
 # Remove old upload_to_gemini function
@@ -90,34 +90,47 @@ client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
 def extract_movement_info(filename):
     # Extract movement name and side (if any)
-    match = re.match(r'\d+_(.*?)(?:_\((L|R)\))?_\[(.*)\].mp4', filename)
-    if match:
-        movement_name = match.group(1).strip().replace('_', ' ')
-        side = match.group(2)
-        ground_truth_str = match.group(3)
-        
-        if side:
-            movement_name = f"{side.lower()} {movement_name}"
-        
-        # Handle ground truth variations (e.g., "27-26-28" or "1")
-        if '-' in ground_truth_str:
-            # Take the first number if multiple are present
-            try:
-                ground_truth_num = int(ground_truth_str.split('-')[0])
-            except ValueError:
-                logger.warning(f"Could not parse first ground truth number in {filename}: {ground_truth_str}")
-                ground_truth_num = None
-        else:
-            try:
-                ground_truth_num = int(ground_truth_str)
-            except ValueError:
-                logger.warning(f"Could not parse ground truth number in {filename}: {ground_truth_str}")
-                ground_truth_num = None
-                
-        return movement_name, ground_truth_num
+    movement_match = re.search(r'_(.*?)(?:\((L|R|l|r)\))_', filename)
+    if movement_match:
+        movement = movement_match.group(1)
+        side = movement_match.group(2)
+        if side and side.upper() == 'L':
+            movement = f'left {movement}'
+        elif side and side.upper() == 'R':
+            movement = f'right {movement}'
     else:
-        logger.warning(f"Could not parse movement/ground truth from filename: {filename}")
-        return None, None
+        movement = None
+        
+    # 检查中括号模式 [L|R]
+    bracket_match = re.search(r'_(.*?)\[(L|R|l|r)\]_', filename)
+    if not movement and bracket_match:
+        movement = bracket_match.group(1)
+        side = bracket_match.group(2)
+        if side and side.upper() == 'L':
+            movement = f'left {movement}'
+        elif side and side.upper() == 'R':
+            movement = f'right {movement}'
+    
+    # 如果两种模式都没匹配到，再尝试匹配没有方向的动作名称
+    if not movement:
+        basic_match = re.search(r'_(.*?)_', filename)
+        if basic_match:
+            movement = basic_match.group(1)
+
+    # Extract ground truth numbers
+    ground_truth_match = re.search(r'\[(\d+(?:-\d+)*)\]', filename)
+    if ground_truth_match:
+        try:
+            # Convert to integer if it's a single number, otherwise keep as string
+            ground_truth = ground_truth_match.group(1)
+            if '-' not in ground_truth:
+                ground_truth = int(ground_truth)
+        except ValueError:
+            ground_truth = None
+    else:
+        ground_truth = None
+
+    return movement, ground_truth
 
 def extract_boxed_answer(text):
     """Extract the number from the \\boxed{} in the response"""
@@ -172,18 +185,17 @@ class VideoProcessor(ABC):
 
 class GeminiProcessor(VideoProcessor):
     def _initialize_client(self):
-        # Configure the Gemini client
-        # Assuming API key is handled via environment variable GOOGLE_API_KEY
+        # Configure the Gemini client using the new API
         try:
-            if not os.getenv('GOOGLE_API_KEY'):
-                logger.warning("GOOGLE_API_KEY environment variable not set. Gemini API calls may fail.")
-            genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
+            self.client = genai.Client(api_key=os.getenv('GEMINI_API_KEY'))
+            if not os.getenv('GEMINI_API_KEY'):
+                logger.warning("GEMINI_API_KEY environment variable not set. Gemini API calls may fail.")
         except Exception as e:
-            logger.error(f"Failed to configure Gemini: {e}")
+            logger.error(f"Failed to initialize Gemini client: {e}")
             # Consider raising the exception or handling it based on desired behavior
 
     def process_single_video(self, video_path: str, movement: str, prompt_template: str) -> dict:
-        model_name = self.config.get('model_name', 'gemini-1.5-flash-latest') # Default Gemini model
+        model_name = self.config.get('model_name', 'gemini-2.0-flash') # Updated default model
         generation_config = self.config.get('generation_config', {})
         _, ground_truth_number = extract_movement_info(os.path.basename(video_path))
 
@@ -193,15 +205,15 @@ class GeminiProcessor(VideoProcessor):
         try:
             logger.info(f"[Gemini - {model_name}] Processing video: {result['file']} for movement: '{movement}'")
 
-            # 1. Upload Video
+            # 1. Upload Video using new client API
             logger.debug(f"[Gemini - {model_name}] Uploading video: {result['file']}...")
-            video_file = genai.upload_file(path=video_path)
+            video_file = self.client.files.upload(file=video_path)
             logger.debug(f"[Gemini - {model_name}] Upload successful. Waiting for processing...")
 
-            # 2. Poll for Video Processing Completion
+            # 2. Poll for Video Processing Completion with new API
             while video_file.state.name == "PROCESSING":
                 time.sleep(10)
-                video_file = genai.get_file(video_file.name)
+                video_file = self.client.files.get(name=video_file.name)
                 logger.debug(f"[Gemini - {model_name}] Video state: {video_file.state.name}")
 
             if video_file.state.name == "FAILED":
@@ -211,12 +223,28 @@ class GeminiProcessor(VideoProcessor):
 
             logger.info(f"[Gemini - {model_name}] Video ready for model: {result['file']}")
 
-            # 3. Prepare Prompt and Call Model
+            # 3. Prepare Prompt and Call Model with new API
             prompt = prompt_template.format(movement=movement)
-            model = genai.GenerativeModel(model_name)
-
+            
+            # Create the config object from the dictionary using proper types
+            config = google_types.GenerateContentConfig(
+                temperature=generation_config.get('temperature', 0.0),
+                top_p=generation_config.get('top_p', 1.0),
+                top_k=generation_config.get('top_k', 32),
+                max_output_tokens=generation_config.get('max_output_tokens', 8192),
+                response_mime_type=generation_config.get('response_mime_type', 'text/plain'),
+            )
+            
             logger.info(f"[Gemini - {model_name}] Sending prompt to model...")
-            response = model.generate_content([prompt, video_file], generation_config=generation_config, request_options={'timeout': 600})
+            # Ensure we're using a valid model name - use a known working model if not specified
+            actual_model = model_name if model_name else "gemini-2.0-flash"
+            logger.info(f"[Gemini] Using model: {actual_model}")
+            
+            response = self.client.models.generate_content(
+                model=actual_model,
+                contents=[prompt, video_file],
+                config=config
+            )
 
             # 4. Process Response
             generated_text = response.text
@@ -224,9 +252,9 @@ class GeminiProcessor(VideoProcessor):
             result["generated_response"] = generated_text
             result["predicted_count"] = extract_boxed_answer(generated_text)
 
-            # Clean up uploaded file
+            # Clean up uploaded file with new API
             try:
-                genai.delete_file(video_file.name)
+                self.client.files.delete(name=video_file.name)
                 logger.debug(f"[Gemini - {model_name}] Deleted uploaded file: {video_file.name}")
             except Exception as delete_err:
                 logger.warning(f"[Gemini - {model_name}] Failed to delete uploaded file {video_file.name}: {delete_err}")
@@ -242,7 +270,7 @@ class GeminiProcessor(VideoProcessor):
             # Attempt to clean up if video_file was created
             if 'video_file' in locals() and hasattr(video_file, 'name'):
                 try:
-                    genai.delete_file(video_file.name)
+                    self.client.files.delete(name=video_file.name)
                     logger.debug(f"[Gemini - {model_name}] Deleted uploaded file on error: {video_file.name}")
                 except Exception as delete_err:
                     logger.warning(f"[Gemini - {model_name}] Failed to delete file {video_file.name} on error: {delete_err}")
@@ -478,13 +506,13 @@ def get_model_folder_name(model_name, service=None, fps=None):
 def main():
     parser = argparse.ArgumentParser(description="Batch process videos for action counting using Gemini or Qwen.")
     parser.add_argument("--service", type=str, required=True, choices=['gemini', 'qwen'], help="LLM service to use.")
-    parser.add_argument("--downloads_dir", type=str, default='downloads', help="Directory containing workout subdirectories.")
-    parser.add_argument("--output_dir", type=str, default='analysis_results', help="Directory to save results.")
+    parser.add_argument("--downloads_dir", type=str, default='downloads_repcount_og', help="Directory containing workout subdirectories.")
+    parser.add_argument("--output_dir", type=str, default='analysis_results_repcount', help="Directory to save results.")
     parser.add_argument("--model_name", type=str, default=None, help="Model name to use (optional, defaults vary by service). Example: gemini-1.5-flash-latest or qwen-vl-plus")
     parser.add_argument("--qwen_api_url", type=str, default="https://dashscope.aliyuncs.com/compatible-mode/v1", help="Base URL for Qwen OpenAI-compatible API (required if service is qwen).")
     parser.add_argument("--qwen_api_key", type=str, default=os.environ.get("DASHSCOPE_API_KEY", "EMPTY"), help="API key for Qwen service.")
     parser.add_argument("--qwen_fps", type=int, default=2, help="Frames per second for Qwen video processing.")
-    parser.add_argument("--pool_size", type=int, default=None, help="Number of worker processes (defaults to cpu_count // 2).")
+    parser.add_argument("--pool_size", type=int, default=5, help="Number of worker processes (defaults to cpu_count // 2).")
     parser.add_argument("--temperature", type=float, default=0.0, help="Sampling temperature.")
     parser.add_argument("--top_p", type=float, default=1, help="Top-p probability mass.")
     parser.add_argument("--max_output_tokens", type=int, default=8192, help="Maximum output tokens.")
@@ -494,16 +522,26 @@ def main():
     # --- Configuration ---
     os.makedirs(args.output_dir, exist_ok=True)
 
+    # Set default model name if not provided
+    if args.service == 'gemini' and not args.model_name:
+        args.model_name = 'gemini-2.0-flash'
+    elif args.service == 'qwen' and not args.model_name:
+        args.model_name = 'qwen-vl-plus'
+        
+    logger.info(f"Using model name: {args.model_name}")
+
     # Create model-specific subfolder
     model_folder_name = get_model_folder_name(args.model_name, args.service, args.qwen_fps)
     model_output_dir = os.path.join(args.output_dir, model_folder_name)
     os.makedirs(model_output_dir, exist_ok=True)
     logger.info(f"Results will be saved to model-specific folder: {model_output_dir}")
 
+    # Create a generation config dictionary that works with both Gemini and Qwen processors
     generation_config = {
         "temperature": args.temperature,
         "top_p": args.top_p,
         "max_output_tokens": args.max_output_tokens,
+        "top_k": 32,  # Add top_k for Gemini compatibility
         "response_mime_type": "text/plain", # Primarily for Gemini, ignored by Qwen processor
     }
 

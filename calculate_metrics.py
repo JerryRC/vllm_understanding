@@ -42,12 +42,21 @@ def process_results_file(file_path):
                     data = json.loads(line)
                     # Ensure both keys exist and values are numbers
                     if 'predicted_count' in data and 'ground_truth_number' in data and \
-                       isinstance(data['predicted_count'], (int, float)) and \
-                       isinstance(data['ground_truth_number'], (int, float)):
+                       isinstance(data['predicted_count'], (int, float)):
+                        # Convert ground truth to integer if it's a string
+                        if isinstance(data['ground_truth_number'], str):
+                            try:
+                                ground_truth = int(data['ground_truth_number'])
+                            except ValueError:
+                                print(f"Skipping invalid ground truth number in {file_path}: {data['ground_truth_number']}")
+                                continue
+                        else:
+                            ground_truth = data['ground_truth_number']
+                            
                         predictions.append(data['predicted_count'])
-                        ground_truths.append(data['ground_truth_number'])
-                    # else:
-                    #     print(f"Skipping invalid line in {file_path}: {line.strip()}")
+                        ground_truths.append(ground_truth)
+                    else:
+                        print(f"Skipping invalid line in {file_path}: {line.strip()}")
                 except json.JSONDecodeError:
                     print(f"Skipping non-JSON line in {file_path}: {line.strip()}")
     except FileNotFoundError:
@@ -59,7 +68,7 @@ def process_results_file(file_path):
     return predictions, ground_truths
 
 def main():
-    analysis_dir = "analysis_results"
+    analysis_dir = "analysis_results_repcount"
     results_files = glob.glob(os.path.join(analysis_dir, "*", "all_results.jsonl"))
 
     all_metrics = []
