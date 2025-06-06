@@ -1,0 +1,82 @@
+{
+  "battle rope": {
+    "mae": 42.42857142857143,
+    "num_samples": 14,
+    "rmse": 101.90962382705291
+  },
+  "bench pressing": {
+    "mae": 5.957894736842105,
+    "num_samples": 95,
+    "rmse": 9.608110608943061
+  },
+  "benchpressing": {
+    "mae": 2.0952380952380953,
+    "num_samples": 21,
+    "rmse": 3.4364987719368982
+  },
+  "front raise": {
+    "mae": 3.053763440860215,
+    "num_samples": 93,
+    "rmse": 6.278483482395226
+  },
+  "frontraise": {
+    "mae": 1.46875,
+    "num_samples": 32,
+    "rmse": 2.3518609652783473
+  },
+  "jump jack": {
+    "mae": 16.933333333333334,
+    "num_samples": 90,
+    "rmse": 24.434947650172422
+  },
+  "jumpjacks": {
+    "mae": 7.5,
+    "num_samples": 16,
+    "rmse": 14.164215474215295
+  },
+  "others": {
+    "mae": 7.3428571428571425,
+    "num_samples": 35,
+    "rmse": 10.646260242115874
+  },
+  "pommelhorse": {
+    "mae": 14.03896103896104,
+    "num_samples": 77,
+    "rmse": 16.51799490992039
+  },
+  "pull up": {
+    "mae": 6.0989010989010985,
+    "num_samples": 91,
+    "rmse": 9.539392014169456
+  },
+  "pullups": {
+    "mae": 2.6818181818181817,
+    "num_samples": 22,
+    "rmse": 3.4178674903831747
+  },
+  "push up": {
+    "mae": 10.329113924050633,
+    "num_samples": 79,
+    "rmse": 18.21461369062584
+  },
+  "pushups": {
+    "mae": 2.3181818181818183,
+    "num_samples": 22,
+    "rmse": 4.0843381571336845
+  },
+  "situp": {
+    "mae": 5.0,
+    "num_samples": 110,
+    "rmse": 9.495453457504615
+  },
+  "squant": {
+    "mae": 1.48,
+    "num_samples": 25,
+    "rmse": 3.8832975677895196
+  },
+  "squat": {
+    "mae": 4.02020202020202,
+    "num_samples": 99,
+    "rmse": 6.472942908676848
+  }
+}
